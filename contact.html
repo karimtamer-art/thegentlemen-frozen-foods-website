@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — TheGentlemen Frozen Foods</title>
+    <meta name="description" content="Get in touch with TheGentlemen for Export. Submit a B2B inquiry for frozen vegetables, fruits, or French fries — our export team will respond promptly." />
+    <!-- Favicon: suppresses browser 404 for favicon.ico -->
+    <link rel="icon" href="data:," />
+    <!-- Preconnect to Font Awesome CDN -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font Awesome loaded asynchronously to reduce render-blocking -->
+    <link rel="stylesheet" media="print" onload="this.media='all'"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    </noscript>
+  </head>
+  <body class="contact-page">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h1>THEGENTLEMEN</h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="export.html">Export</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="contact-main">
+      <section class="contact-section">
+        <div class="container">
+          <div class="section-title fade-in">
+            <h2>Contact Our Team</h2>
+            <p>Global frozen food specialists since 2023</p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-info fade-in">
+              <h3>Our Locations</h3>
+              <div class="info-box">
+                <h4>Headquarters</h4>
+                <!-- TODO: Replace the placeholder values below with your real contact details -->
+                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
+                <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
+              </div>
+              <div class="info-box">
+                <h4>Export Inquiries</h4>
+                <p><i class="fas fa-globe"></i> Serving: UK, Kuwait, UAE, Saudi Arabia &amp; more</p>
+                <p><i class="fas fa-clock"></i> Response within 1–2 business days</p>
+              </div>
+            </div>
+            <div class="contact-form fade-in delay-1">
+              <!--
+                FORM SETUP (Formspree — free tier, no backend needed):
+                1. Go to https://formspree.io and sign up for a free account.
+                2. Create a new form and copy your form endpoint URL.
+                3. Replace "https://formspree.io/f/YOUR_FORM_ID" below with your endpoint.
+                4. Formspree will email you every submission. No server code required.
+              -->
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
+              >
+                <!-- Formspree: redirect after submit (optional) -->
+                <input type="hidden" name="_next" value="contact.html?sent=1" />
+                <input type="hidden" name="_subject" value="New B2B Inquiry — TheGentlemen Website" />
+
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="Email Address" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
+                </div>
+                <div class="form-group">
+                  <label for="inquiry">Purpose of Inquiry</label>
+                  <select id="inquiry" name="inquiry" required>
+                    <option value="">Select a purpose…</option>
+                    <option value="distributor">Become a Distributor</option>
+                    <option value="product">Product Inquiry</option>
+                    <option value="partnership">Business Partnership</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your requirements — product type, quantity, destination market…"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <!-- Honeypot spam protection — hidden from real users -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+                <button type="submit">Submit Inquiry</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-logo">
+          <h3>TheGentlemen for Export</h3>
+          <p>Exporting Quality From Egypt, Worldwide</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="export.html">Export</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <!-- TODO: Replace these placeholders with your real contact information -->
+          <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+          <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
+          <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <!-- TODO: Replace # with your real social media profile URLs -->
+            <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

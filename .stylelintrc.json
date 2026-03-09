@@ -1,0 +1,15 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "unit-no-unknown": true,
+    "property-no-unknown": true,
+    "declaration-block-no-duplicate-properties": true,
+    "selector-class-pattern": null,
+    "color-named": null,
+    "no-duplicate-selectors": true,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "import-notation": null
+  }
+}

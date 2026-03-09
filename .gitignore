@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Generated reports and audit artifacts
+reports/
+audit/audit-results.json
+audit/axe-results.json
+audit/screenshots/
+
+# Playwright test artifacts
+test-results/
+tests/ui.spec.js-snapshots/
+playwright-report/
+
+# Claude Code internal workspace (dev notes, session memory, local settings)
+.claude/
+.mcp.json
+
+# Archived / non-public files
+FrozenFoodsLandingPage.html
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor directories
+.vscode/
+.idea/
