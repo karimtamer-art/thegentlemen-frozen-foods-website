@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -356,98 +356,7 @@
     </div>
   </footer>
 
-  <script>
-    // ── Header: add .scrolled class after 20px ──
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
 
-    // ── Mobile Nav ──
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-    const backdrop  = document.getElementById('nav-backdrop');
-
-    function closeNav() {
-      mobileNav.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    backdrop.addEventListener('click', closeNav);
-
-    mobileNav.querySelectorAll('.mobile-nav-list a').forEach(link => {
-      link.addEventListener('click', closeNav);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeNav();
-    });
-
-    // ── IntersectionObserver: reveal animations ──
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    revealEls.forEach(el => io.observe(el));
-
-    // Immediately show elements already in the viewport — avoids the async observer delay flinch
-    revealEls.forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) {
-        el.classList.add('visible');
-        io.unobserve(el);
-      }
-    });
-
-    // ── Stats counter animation ──
-    const statNums = document.querySelectorAll('.stat-num');
-
-    const counterIo = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const raw = el.textContent.trim();
-        const num = parseFloat(raw);
-        if (isNaN(num)) { counterIo.unobserve(el); return; }
-
-        const suffix = raw.replace(String(num), '');
-        const duration = 1200;
-        const steps = 50;
-        const increment = num / steps;
-        let current = 0;
-        let count = 0;
-
-        const tick = () => {
-          count++;
-          current = count >= steps ? num : current + increment;
-          el.textContent = (Number.isInteger(num)
-            ? Math.round(current)
-            : current.toFixed(1)) + suffix;
-          if (count < steps) requestAnimationFrame(tick);
-        };
-
-        requestAnimationFrame(tick);
-        counterIo.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-
-    statNums.forEach(el => counterIo.observe(el));
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>

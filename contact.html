@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -124,24 +124,16 @@
         <p class="form-eyebrow reveal">B2B Export Inquiry</p>
         <h2 class="form-heading reveal reveal-delay-1">Send Us a Message</h2>
 
-        <!--
-          FORMSPREE SETUP:
-          1. Sign up at https://formspree.io
-          2. Create a new form, copy your endpoint URL
-          3. Replace "YOUR_FORM_ID" below with your real form ID
-        -->
         <form
           class="contact-form reveal reveal-delay-2"
           id="contactForm"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
           novalidate
         >
-          <!-- Formspree hidden fields -->
-          <input type="hidden" name="_next" value="contact.html?sent=1" />
-          <input type="hidden" name="_subject" value="New B2B Inquiry — TheGentlemen Website" />
+          <!-- Web3Forms -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+          <input type="hidden" name="subject" value="New B2B Inquiry — TheGentlemen Website" />
           <!-- Honeypot spam protection -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" />
 
           <div class="form-row">
             <div class="form-group">
@@ -192,14 +184,46 @@
           </div>
 
           <div class="form-group">
-            <label for="inquiry">Purpose of Inquiry</label>
-            <select id="inquiry" name="inquiry">
-              <option value="" disabled selected>Select a purpose…</option>
-              <option value="distributor">Become a Distributor</option>
-              <option value="product">Product Inquiry</option>
-              <option value="partnership">Business Partnership</option>
-              <option value="other">Other</option>
-            </select>
+            <label>Purpose of Inquiry</label>
+            <input type="hidden" name="inquiry" id="inquiry" />
+            <div class="custom-select" id="inquiry-dropdown" role="combobox" aria-haspopup="listbox" aria-expanded="false">
+              <button type="button" class="custom-select__trigger" aria-label="Select purpose of inquiry">
+                <span class="custom-select__value">Select a purpose…</span>
+                <svg class="custom-select__chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                  <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <ul class="custom-select__options" role="listbox" aria-label="Purpose of inquiry">
+                <li class="custom-select__option" data-value="distributor" role="option">
+                  <span class="custom-select__opt-icon"><i class="fas fa-handshake"></i></span>
+                  <span class="custom-select__opt-text">
+                    <strong>Become a Distributor</strong>
+                    <small>Join our distribution network</small>
+                  </span>
+                </li>
+                <li class="custom-select__option" data-value="product" role="option">
+                  <span class="custom-select__opt-icon"><i class="fas fa-box-open"></i></span>
+                  <span class="custom-select__opt-text">
+                    <strong>Product Inquiry</strong>
+                    <small>Learn about our frozen products</small>
+                  </span>
+                </li>
+                <li class="custom-select__option" data-value="partnership" role="option">
+                  <span class="custom-select__opt-icon"><i class="fas fa-briefcase"></i></span>
+                  <span class="custom-select__opt-text">
+                    <strong>Business Partnership</strong>
+                    <small>Explore collaboration opportunities</small>
+                  </span>
+                </li>
+                <li class="custom-select__option" data-value="other" role="option">
+                  <span class="custom-select__opt-icon"><i class="fas fa-comment-dots"></i></span>
+                  <span class="custom-select__opt-text">
+                    <strong>Other</strong>
+                    <small>Any other enquiry</small>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="form-group">
@@ -307,84 +331,7 @@
     </div>
   </footer>
 
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
-  <script>
-    // ---- Header scroll state ----
-    const header = document.getElementById('site-header');
-    const SCROLL_THRESHOLD = 20;
 
-    function updateHeader() {
-      // Contact page always keeps the dark nav (hero panel is dark at all scroll positions)
-      header.classList.add('scrolled');
-    }
-    window.addEventListener('scroll', updateHeader, { passive: true });
-    updateHeader(); // run on load
-
-    // ---- Mobile nav toggle ----
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-    const backdrop  = document.getElementById('nav-backdrop');
-
-    function closeNav() {
-      mobileNav.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    backdrop.addEventListener('click', closeNav);
-
-    mobileNav.querySelectorAll('.mobile-nav-list a').forEach(link => {
-      link.addEventListener('click', closeNav);
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeNav();
-    });
-
-    // ---- IntersectionObserver reveal animations ----
-    const revealEls = document.querySelectorAll('.reveal');
-
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealEls.forEach(el => observer.observe(el));
-
-      // Immediately show elements already in the viewport — avoids the async observer delay flinch
-      revealEls.forEach(el => {
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) {
-          el.classList.add('visible');
-          observer.unobserve(el);
-        }
-      });
-    } else {
-      // Fallback — show all immediately
-      revealEls.forEach(el => el.classList.add('visible'));
-    }
-
-    // ---- Header is always scrolled when left panel has dark bg visible ----
-    // Force scrolled state on this page since the first panel is dark and the
-    // header needs to be legible from the very top.
-    header.classList.add('scrolled');
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
