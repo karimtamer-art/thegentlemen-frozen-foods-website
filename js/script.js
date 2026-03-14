@@ -1,3 +1,8 @@
+// Remove no-trans after initial paint so transitions work normally on interaction
+requestAnimationFrame(() => requestAnimationFrame(() =>
+  document.documentElement.classList.remove('no-trans')
+));
+
     function animateCounter(id, target) {
       let count = 0;
       const increment = Math.ceil(target / 100);
@@ -83,3 +88,55 @@
   // }
 
   // setInterval(createSnowflake, 200); // every 200ms a new flake
+
+// =========================
+// Nav Slider — SlideTabs sliding pill (desktop only)
+// Mirrors the React SlideTabs component: pill follows hover, snaps back to
+// the active page link on mouse-leave.
+// =========================
+(function () {
+  var navbarUl = document.querySelector('.navbar ul');
+  if (!navbarUl) return;
+
+  // Inject the pill element (CSS keeps it display:none on mobile)
+  var slider = document.createElement('li');
+  slider.className = 'nav-slider';
+  slider.setAttribute('aria-hidden', 'true');
+  navbarUl.appendChild(slider);
+
+  // All real nav items (excludes the slider itself)
+  var navItems = Array.from(navbarUl.querySelectorAll('li:not(.nav-slider)'));
+
+  // Find the active link and its parent <li>
+  var activeLink = navbarUl.querySelector('a.active');
+  var activeLi = activeLink ? activeLink.parentElement : navItems[0];
+
+  // Position the pill over a given <li>
+  function moveSlider(li) {
+    slider.style.left   = li.offsetLeft + 'px';
+    slider.style.top    = li.offsetTop  + 'px';
+    slider.style.width  = li.offsetWidth  + 'px';
+    slider.style.height = li.offsetHeight + 'px';
+    slider.style.opacity = '1';
+  }
+
+  // Place pill on the active link once layout is ready
+  if (activeLi) {
+    requestAnimationFrame(function () { moveSlider(activeLi); });
+  }
+
+  // Follow the mouse across nav items
+  navItems.forEach(function (li) {
+    li.addEventListener('mouseenter', function () { moveSlider(li); });
+  });
+
+  // Snap back to the active link when the mouse leaves the nav
+  navbarUl.addEventListener('mouseleave', function () {
+    if (activeLi) moveSlider(activeLi);
+  });
+
+  // Keep pill aligned after window resize
+  window.addEventListener('resize', function () {
+    if (activeLi) requestAnimationFrame(function () { moveSlider(activeLi); });
+  });
+}());

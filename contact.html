@@ -1,164 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us — TheGentlemen Frozen Foods</title>
-    <meta name="description" content="Get in touch with TheGentlemen for Export. Submit a B2B inquiry for frozen vegetables, fruits, or French fries — our export team will respond promptly." />
-    <!-- Favicon: suppresses browser 404 for favicon.ico -->
-    <link rel="icon" href="data:," />
-    <!-- Preconnect to Font Awesome CDN -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Font Awesome loaded asynchronously to reduce render-blocking -->
-    <link rel="stylesheet" media="print" onload="this.media='all'"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    </noscript>
-  </head>
-  <body class="contact-page">
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <h1>THEGENTLEMEN</h1>
-        </div>
-        <nav class="navbar">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="export.html">Export</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="mobile-menu">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TheGentlemen for Export</title>
+  <meta name="description" content="Get in touch with TheGentlemen for Export. Submit a B2B inquiry for frozen vegetables, fruits, or French fries — our export team will respond promptly." />
+  <link rel="icon" href="data:," />
 
-    <main class="contact-main">
-      <section class="contact-section">
-        <div class="container">
-          <div class="section-title fade-in">
-            <h2>Contact Our Team</h2>
-            <p>Global frozen food specialists since 2023</p>
-          </div>
-          <div class="contact-grid">
-            <div class="contact-info fade-in">
-              <h3>Our Locations</h3>
-              <div class="info-box">
-                <h4>Headquarters</h4>
-                <!-- TODO: Replace the placeholder values below with your real contact details -->
-                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
-                <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
-              </div>
-              <div class="info-box">
-                <h4>Export Inquiries</h4>
-                <p><i class="fas fa-globe"></i> Serving: UK, Kuwait, UAE, Saudi Arabia &amp; more</p>
-                <p><i class="fas fa-clock"></i> Response within 1–2 business days</p>
-              </div>
+  <!-- Google Fonts -->
+  <script>document.documentElement.classList.add('no-trans')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=optional" rel="stylesheet" />
+
+  <!-- Font Awesome (async) -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
+
+
+</head>
+
+<body id="page-contact">
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">THE<span>GENTLEMEN</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── MOBILE NAV ─── -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-nav-backdrop" id="nav-backdrop"></div>
+    <div class="mobile-nav-panel">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="export.html">Export</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         CONTACT SPLIT HERO
+    ============================================================ -->
+    <section class="contact-split" aria-label="Contact information and inquiry form">
+
+      <!-- LEFT — Info panel -->
+      <div class="split-left">
+
+        <p class="contact-tag reveal">Get In Touch</p>
+
+        <h1 class="contact-headline reveal reveal-delay-1">
+          Let's Build<br>
+          <em>Something</em><br>
+          Together
+        </h1>
+
+        <hr class="gold-rule reveal reveal-delay-2" />
+
+        <ul class="contact-info-list reveal reveal-delay-2" aria-label="Contact details">
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="info-text">Cairo, Egypt</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+            <!-- TODO: Replace with real phone number -->
+            <span class="info-text">+20 [Your Phone Number]</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+            <!-- TODO: Replace with real email address -->
+            <span class="info-text">[Your Email Address]</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-globe"></i></span>
+            <span class="info-text">Serving: UK, Kuwait, UAE, Saudi Arabia &amp; more</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+            <span class="info-text">Response within 1–2 business days</span>
+          </li>
+        </ul>
+
+        <div class="contact-social reveal reveal-delay-3" aria-label="Social media links">
+          <!-- TODO: Replace href="#" with real social profile URLs -->
+          <a href="#" class="social-btn" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+      </div><!-- /split-left -->
+
+      <!-- RIGHT — Form panel -->
+      <div class="split-right">
+
+        <p class="form-eyebrow reveal">B2B Export Inquiry</p>
+        <h2 class="form-heading reveal reveal-delay-1">Send Us a Message</h2>
+
+        <!--
+          FORMSPREE SETUP:
+          1. Sign up at https://formspree.io
+          2. Create a new form, copy your endpoint URL
+          3. Replace "YOUR_FORM_ID" below with your real form ID
+        -->
+        <form
+          class="contact-form reveal reveal-delay-2"
+          id="contactForm"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+        >
+          <!-- Formspree hidden fields -->
+          <input type="hidden" name="_next" value="contact.html?sent=1" />
+          <input type="hidden" name="_subject" value="New B2B Inquiry — TheGentlemen Website" />
+          <!-- Honeypot spam protection -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+                autocomplete="name"
+              />
             </div>
-            <div class="contact-form fade-in delay-1">
-              <!--
-                FORM SETUP (Formspree — free tier, no backend needed):
-                1. Go to https://formspree.io and sign up for a free account.
-                2. Create a new form and copy your form endpoint URL.
-                3. Replace "https://formspree.io/f/YOUR_FORM_ID" below with your endpoint.
-                4. Formspree will email you every submission. No server code required.
-              -->
-              <form
-                id="contactForm"
-                action="https://formspree.io/f/YOUR_FORM_ID"
-                method="POST"
-              >
-                <!-- Formspree: redirect after submit (optional) -->
-                <input type="hidden" name="_next" value="contact.html?sent=1" />
-                <input type="hidden" name="_subject" value="New B2B Inquiry — TheGentlemen Website" />
-
-                <div class="form-group">
-                  <label for="name">Full Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your Name" required />
-                </div>
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" id="email" name="email" placeholder="Email Address" required />
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
-                </div>
-                <div class="form-group">
-                  <label for="inquiry">Purpose of Inquiry</label>
-                  <select id="inquiry" name="inquiry" required>
-                    <option value="">Select a purpose…</option>
-                    <option value="distributor">Become a Distributor</option>
-                    <option value="product">Product Inquiry</option>
-                    <option value="partnership">Business Partnership</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us about your requirements — product type, quantity, destination market…"
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-                <!-- Honeypot spam protection — hidden from real users -->
-                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-                <button type="submit">Submit Inquiry</button>
-              </form>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@company.com"
+                required
+                autocomplete="email"
+              />
             </div>
           </div>
-        </div>
-      </section>
-    </main>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-logo">
-          <h3>TheGentlemen for Export</h3>
-          <p>Exporting Quality From Egypt, Worldwide</p>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="export.html">Export</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <!-- TODO: Replace these placeholders with your real contact information -->
-          <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-          <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
-          <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
-        </div>
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="social-icons">
-            <!-- TODO: Replace # with your real social media profile URLs -->
-            <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 (555) 000-0000"
+                autocomplete="tel"
+              />
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organisation</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company name"
+                autocomplete="organization"
+              />
+            </div>
           </div>
+
+          <div class="form-group">
+            <label for="inquiry">Purpose of Inquiry</label>
+            <select id="inquiry" name="inquiry">
+              <option value="" disabled selected>Select a purpose…</option>
+              <option value="distributor">Become a Distributor</option>
+              <option value="product">Product Inquiry</option>
+              <option value="partnership">Business Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us about your requirements — product type, quantity, destination market…"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Inquiry</button>
+        </form>
+
+      </div><!-- /split-right -->
+
+    </section><!-- /contact-split -->
+
+    <!-- ============================================================
+         INFO STRIP
+    ============================================================ -->
+    <section class="info-strip" aria-label="Why work with us">
+      <div class="info-strip-inner">
+
+        <article class="info-card reveal">
+          <i class="fas fa-shipping-fast card-icon" aria-hidden="true"></i>
+          <h3>Export Ready</h3>
+          <p>Products packaged to international standards for seamless cross-border delivery.</p>
+        </article>
+
+        <article class="info-card reveal reveal-delay-1">
+          <i class="fas fa-certificate card-icon" aria-hidden="true"></i>
+          <h3>Quality Assured</h3>
+          <p>Certified cold-chain from source to delivery, preserving freshness at every step.</p>
+        </article>
+
+        <article class="info-card reveal reveal-delay-2">
+          <i class="fas fa-handshake card-icon" aria-hidden="true"></i>
+          <h3>B2B Focus</h3>
+          <p>Serving importers, distributors, and retailers worldwide with tailored solutions.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="brand-name">The<span>Gentlemen</span> for Export</p>
+        <p>Exporting quality frozen foods from Egypt to the world. Founded 2023.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <!-- TODO: Replace placeholders with real contact information -->
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cairo, Egypt</li>
+          <li><i class="fas fa-phone" aria-hidden="true"></i> +20 [Your Phone Number]</li>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i> [Your Email Address]</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-social-icons">
+          <!-- TODO: Replace # with real social media profile URLs -->
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
-      </div>
-    </footer>
 
-    <script src="js/script.js"></script>
-  </body>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <span class="preview-badge">Design Preview — Not Live</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    // ---- Header scroll state ----
+    const header = document.getElementById('site-header');
+    const SCROLL_THRESHOLD = 20;
+
+    function updateHeader() {
+      // Contact page always keeps the dark nav (hero panel is dark at all scroll positions)
+      header.classList.add('scrolled');
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader(); // run on load
+
+    // ---- Mobile nav toggle ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    let navOpen = false;
+
+    function toggleNav(open) {
+      navOpen = open;
+      hamburger.classList.toggle('open', navOpen);
+      mobileNav.classList.toggle('open', navOpen);
+      hamburger.setAttribute('aria-expanded', String(navOpen));
+      document.body.style.overflow = navOpen ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', () => toggleNav(!navOpen));
+
+    // Close on overlay click
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) toggleNav(false);
+    });
+
+    // Close on nav link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleNav(false));
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navOpen) toggleNav(false);
+    });
+
+    // ---- IntersectionObserver reveal animations ----
+    const revealEls = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealEls.forEach(el => observer.observe(el));
+
+      // Immediately show elements already in the viewport — avoids the async observer delay flinch
+      revealEls.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) {
+          el.classList.add('visible');
+          observer.unobserve(el);
+        }
+      });
+    } else {
+      // Fallback — show all immediately
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // ---- Header is always scrolled when left panel has dark bg visible ----
+    // Force scrolled state on this page since the first panel is dark and the
+    // header needs to be legible from the very top.
+    header.classList.add('scrolled');
+  </script>
+
+</body>
 </html>

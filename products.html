@@ -1,288 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products — TheGentlemen Frozen Foods</title>
-    <meta name="description" content="Explore TheGentlemen's export range of premium Egyptian frozen foods: French fries, frozen vegetables, and frozen fruits — IQF quality, ready for international markets." />
-    <!-- Favicon: suppresses browser 404 for favicon.ico -->
-    <link rel="icon" href="data:," />
-    <!-- Preconnect to Font Awesome CDN for faster icon loading -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome loaded asynchronously to reduce render-blocking -->
-    <link rel="stylesheet" media="print" onload="this.media='all'"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </noscript>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — TheGentlemen for Export</title>
+  <meta name="description" content="Explore TheGentlemen for Export's premium IQF frozen products — French fries, frozen vegetables, and frozen fruits exported from Egypt to global B2B markets." />
+  <link rel="icon" href="data:," />
+  <script>document.documentElement.classList.add('no-trans')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=optional" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
+
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <!-- Logo as link — avoids duplicate H1 since this page has its own H1 below -->
-                <a href="index.html" class="logo-link">THEGENTLEMEN</a>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="export.html">Export</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+<body id="page-products">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">THE<span>GENTLEMEN</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html" class="active" aria-current="page">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="export.html">Export</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-label="Products hero">
+      <div class="hero-left">
+        <div class="hero-left-inner">
+          <p class="hero-label">Our Range</p>
+          <h1 class="hero-title">
+            Premium Export<br>
+            <em>Products</em>
+          </h1>
+          <p class="hero-subtitle">
+            From Egyptian farms to global markets — IQF frozen vegetables, fruits,
+            and French fries that meet international quality standards for B2B buyers worldwide.
+          </p>
+          <div class="hero-chips">
+            <a href="#french-fries" class="hero-chip">French Fries</a>
+            <a href="#frozen-vegetables" class="hero-chip">Frozen Vegetables</a>
+            <a href="#frozen-fruits" class="hero-chip">Frozen Fruits</a>
+          </div>
         </div>
-    </header>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <img
+          src="Images/mixedVeggiesBag-800.jpg"
+          srcset="Images/mixedVeggiesBag-400.jpg 400w, Images/mixedVeggiesBag-800.jpg 800w"
+          sizes="(max-width: 900px) 100vw, 48vw"
+          alt="Mixed frozen vegetables export bag — TheGentlemen for Export"
+          width="800" height="600"
+        />
+      </div>
+    </section>
 
-    <main>
-
-        <!-- ── Products Hero ─────────────────────────────────────────── -->
-        <section class="product-hero product-container">
-            <div class="product-hero-text">
-                <h1>Our Premium Export Products</h1>
-                <p>From Egyptian farms to global markets — IQF frozen vegetables, fruits, and French fries that meet international quality standards for B2B buyers and distributors worldwide.</p>
-            </div>
-            <div class="product-hero-image">
-                <img
-                    src="Images/mixedVeggiesBag-800.jpg"
-                    alt="TheGentlemen premium frozen mixed vegetables in export packaging"
-                    width="800"
-                    height="800"
-                    loading="lazy"
-                />
-            </div>
-        </section>
-
-        <!-- ── French Fries ──────────────────────────────────────────── -->
-        <section class="product-container">
-            <h2 class="product-section-title">French Fries</h2>
-            <p class="product-section-subtitle">Export-grade IQF French fries — consistent cut, consistent quality</p>
-            <div class="product-products-grid">
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/fries-800.jpg"
-                         alt="Classic cut French fries — export ready"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Classic Cut Fries</div>
-                        <div class="product-product-location">TheGentlemen Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/Straight-fries-800.jpg"
-                         alt="Straight-cut French fries — export ready"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Straight-Cut Fries</div>
-                        <div class="product-product-location">TheGentlemen Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/fries-800.jpg"
-                         alt="Shoestring French fries — export ready"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Shoestring Fries</div>
-                        <div class="product-product-location">TheGentlemen Export</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── Frozen Vegetables ─────────────────────────────────────── -->
-        <section class="product-container">
-            <h2 class="product-section-title">Frozen Vegetables</h2>
-            <p class="product-section-subtitle">Harvested at peak freshness, IQF processed within hours</p>
-            <div class="product-products-grid">
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/Brocoli-800.jpg"
-                         alt="Frozen broccoli florets"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Broccoli</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/green-beans-800.jpg"
-                         alt="Frozen green beans"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Green Beans</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/carrots-800.jpg"
-                         alt="Frozen sliced carrots"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Carrots</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/califlur-800.jpg"
-                         alt="Frozen cauliflower florets"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Cauliflower</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/corn-800.jpg"
-                         alt="Frozen sweet corn"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Sweet Corn</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── Frozen Fruits ─────────────────────────────────────────── -->
-        <section class="product-container">
-            <h2 class="product-section-title">Frozen Fruits</h2>
-            <p class="product-section-subtitle">Naturally sweet, IQF-preserved to lock in freshness</p>
-            <div class="product-products-grid">
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/strawberries-800.jpg"
-                         alt="Frozen strawberries"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Strawberries</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/mango-800.jpg"
-                         alt="Frozen mango chunks"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Mango Chunks</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-                <div class="product-product-card">
-                    <img class="product-product-image"
-                         src="Images/mixed-veggies-800.jpg"
-                         alt="Frozen mixed vegetables for export"
-                         width="800" height="800"
-                         loading="lazy" />
-                    <div class="product-product-info">
-                        <div class="product-product-title">Frozen Mixed Vegetables</div>
-                        <div class="product-product-location">Egyptian Export</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── B2B Ordering Process (replaces B2C "Shopping Made Simple") ── -->
-        <section class="product-journey product-container">
-            <h2>How to Place a B2B Order</h2>
-            <p>Our export process is straightforward. Tell us what you need and we handle the rest — from quality sourcing to documentation and delivery.</p>
-            <div class="product-journey-steps">
-                <div class="product-step">
-                    <div class="product-step-icon">1</div>
-                    <div class="product-step-title">Submit Your Inquiry</div>
-                    <div class="product-step-desc">Contact our export team with your required products, quantities, and destination market.</div>
-                </div>
-                <div class="product-step">
-                    <div class="product-step-icon">2</div>
-                    <div class="product-step-title">Receive a Custom Quote</div>
-                    <div class="product-step-desc">We prepare a tailored export offer with pricing, packaging options, and shipping terms (FOB/CIF/EXW).</div>
-                </div>
-                <div class="product-step">
-                    <div class="product-step-icon">3</div>
-                    <div class="product-step-title">Confirm &amp; We Ship</div>
-                    <div class="product-step-desc">Upon agreement, we handle all export documentation, cold-chain logistics, and timely delivery to your port.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── Why TheGentlemen (replaces FrozenFresh promo) ──────────── -->
-        <section class="product-promo product-container">
-            <div class="product-promo-image">
-                <img
-                    src="Images/exportbuildings.png"
-                    alt="TheGentlemen frozen food export facility in Egypt"
-                    width="800" height="600"
-                    loading="lazy"
-                />
-            </div>
-            <div class="product-promo-text">
-                <h2>Quality You Can Trust<br />From Egypt to the World</h2>
-                <p>TheGentlemen for Export sources the finest Egyptian produce and processes it under strict cold-chain conditions. Every shipment meets international food safety standards, giving our B2B partners confidence in every order.</p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <h3>TheGentlemen for Export</h3>
-                <p>Exporting Quality From Egypt, Worldwide</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="export.html">Export</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <!-- TODO: Replace these placeholders with your real contact information -->
-                <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
-                <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
-            </div>
-            <div class="footer-social">
-                <h4>Connect</h4>
-                <div class="social-icons">
-                    <!-- TODO: Replace # with your real social media profile URLs -->
-                    <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+    <!-- ==================== IQF QUALITY BAR ==================== -->
+    <div class="iqf-bar" role="region" aria-label="IQF quality standards">
+      <div class="iqf-bar-inner">
+        <p class="iqf-heading">Every product is IQF-processed within hours of harvest</p>
+        <div class="iqf-facts">
+          <div class="iqf-fact">
+            <span class="iqf-icon" aria-hidden="true">❄</span>
+            <span class="iqf-fact-text">Flash Frozen</span>
+          </div>
+          <div class="iqf-fact">
+            <span class="iqf-icon" aria-hidden="true">🌿</span>
+            <span class="iqf-fact-text">100% Egyptian Origin</span>
+          </div>
+          <div class="iqf-fact">
+            <span class="iqf-icon" aria-hidden="true">📦</span>
+            <span class="iqf-fact-text">Export-Ready Packaging</span>
+          </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </div>
 
-    <script src="js/script.js"></script>
+    <!-- ==================== FRENCH FRIES ==================== -->
+    <section class="fries-section" id="french-fries" aria-labelledby="fries-heading">
+      <div class="fries-inner">
+        <div class="section-header">
+          <p class="section-num reveal" aria-hidden="true">01</p>
+          <p class="section-tag reveal" style="transition-delay:0.05s">French Fries</p>
+          <h2 class="fries-title reveal" id="fries-heading" style="transition-delay:0.1s">
+            Consistent Cut,<br>Consistent Quality
+          </h2>
+        </div>
+
+        <div class="product-grid-3">
+          <!-- Card 1 -->
+          <article class="product-card reveal" style="transition-delay:0.1s">
+            <div class="product-card-img-wrap">
+              <img
+                class="product-card-img"
+                src="Images/fries-800.jpg"
+                srcset="Images/fries-400.jpg 400w, Images/fries-800.jpg 800w"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Classic Cut Fries — TheGentlemen Export"
+                width="800" height="600"
+                loading="lazy"
+              />
+              <div class="product-card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-tag">IQF · Export Grade</p>
+              <h3 class="product-card-name">Classic Cut Fries</h3>
+              <p class="product-card-desc">
+                A benchmark for foodservice and retail alike. Uniform thickness, golden
+                colour, and a light crisp coat that holds texture after frying.
+              </p>
+              <div class="product-card-footer">
+                <span class="product-card-brand">TheGentlemen Export</span>
+                <div class="product-card-icon" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="product-card reveal" style="transition-delay:0.2s">
+            <div class="product-card-img-wrap">
+              <img
+                class="product-card-img"
+                src="Images/Straight-fries-800.jpg"
+                srcset="Images/Straight-fries-400.jpg 400w, Images/Straight-fries-800.jpg 800w"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Straight-Cut Fries — TheGentlemen Export"
+                width="800" height="600"
+                loading="lazy"
+              />
+              <div class="product-card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-tag">IQF · Export Grade</p>
+              <h3 class="product-card-name">Straight-Cut Fries</h3>
+              <p class="product-card-desc">
+                Precision-cut for consistent portion control and even cooking. Ideal
+                for quick-service restaurants and institutional catering contracts.
+              </p>
+              <div class="product-card-footer">
+                <span class="product-card-brand">TheGentlemen Export</span>
+                <div class="product-card-icon" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="product-card reveal" style="transition-delay:0.3s">
+            <div class="product-card-img-wrap">
+              <img
+                class="product-card-img"
+                src="Images/fries-800.jpg"
+                srcset="Images/fries-400.jpg 400w, Images/fries-800.jpg 800w"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Shoestring Fries — TheGentlemen Export"
+                width="800" height="600"
+                loading="lazy"
+              />
+              <div class="product-card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-tag">IQF · Export Grade</p>
+              <h3 class="product-card-name">Shoestring Fries</h3>
+              <p class="product-card-desc">
+                Ultra-thin, light and airy. A premium gourmet option popular with
+                upmarket restaurant groups and specialty food importers globally.
+              </p>
+              <div class="product-card-footer">
+                <span class="product-card-brand">TheGentlemen Export</span>
+                <div class="product-card-icon" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FROZEN VEGETABLES ==================== -->
+    <section class="veg-section" id="frozen-vegetables" aria-labelledby="veg-heading">
+      <div class="veg-inner">
+        <div class="section-header">
+          <p class="section-num reveal" aria-hidden="true">02</p>
+          <p class="section-tag reveal" style="transition-delay:0.05s">Frozen Vegetables</p>
+          <h2 class="veg-title reveal" id="veg-heading" style="transition-delay:0.1s">
+            Harvested at<br>Peak Freshness
+          </h2>
+        </div>
+
+        <div class="product-grid-auto">
+          <!-- Broccoli -->
+          <article class="product-card-dark reveal" style="transition-delay:0.1s">
+            <div class="product-card-dark-img-wrap">
+              <img
+                class="product-card-dark-img"
+                src="Images/Brocoli-800.jpg"
+                srcset="Images/Brocoli-400.jpg 400w, Images/Brocoli-800.jpg 800w"
+                sizes="(max-width: 600px) 50vw, 220px"
+                alt="Frozen Broccoli — TheGentlemen Export"
+                width="800" height="800"
+                loading="lazy"
+              />
+              <div class="product-card-dark-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-dark-body">
+              <p class="product-card-dark-tag">IQF Florets</p>
+              <h3 class="product-card-dark-name">Frozen Broccoli</h3>
+              <div class="product-card-dark-line" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Green Beans -->
+          <article class="product-card-dark reveal" style="transition-delay:0.15s">
+            <div class="product-card-dark-img-wrap">
+              <img
+                class="product-card-dark-img"
+                src="Images/green-beans-800.jpg"
+                srcset="Images/green-beans-400.jpg 400w, Images/green-beans-800.jpg 800w"
+                sizes="(max-width: 600px) 50vw, 220px"
+                alt="Frozen Green Beans — TheGentlemen Export"
+                width="800" height="800"
+                loading="lazy"
+              />
+              <div class="product-card-dark-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-dark-body">
+              <p class="product-card-dark-tag">IQF Whole / Cut</p>
+              <h3 class="product-card-dark-name">Frozen Green Beans</h3>
+              <div class="product-card-dark-line" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Carrots -->
+          <article class="product-card-dark reveal" style="transition-delay:0.2s">
+            <div class="product-card-dark-img-wrap">
+              <img
+                class="product-card-dark-img"
+                src="Images/carrots-800.jpg"
+                srcset="Images/carrots-400.jpg 400w, Images/carrots-800.jpg 800w"
+                sizes="(max-width: 600px) 50vw, 220px"
+                alt="Frozen Carrots — TheGentlemen Export"
+                width="800" height="800"
+                loading="lazy"
+              />
+              <div class="product-card-dark-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-dark-body">
+              <p class="product-card-dark-tag">IQF Diced / Sliced</p>
+              <h3 class="product-card-dark-name">Frozen Carrots</h3>
+              <div class="product-card-dark-line" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Cauliflower -->
+          <article class="product-card-dark reveal" style="transition-delay:0.25s">
+            <div class="product-card-dark-img-wrap">
+              <img
+                class="product-card-dark-img"
+                src="Images/califlur-800.jpg"
+                srcset="Images/califlur-400.jpg 400w, Images/califlur-800.jpg 800w"
+                sizes="(max-width: 600px) 50vw, 220px"
+                alt="Frozen Cauliflower — TheGentlemen Export"
+                width="800" height="800"
+                loading="lazy"
+              />
+              <div class="product-card-dark-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-dark-body">
+              <p class="product-card-dark-tag">IQF Florets</p>
+              <h3 class="product-card-dark-name">Frozen Cauliflower</h3>
+              <div class="product-card-dark-line" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Sweet Corn -->
+          <article class="product-card-dark reveal" style="transition-delay:0.3s">
+            <div class="product-card-dark-img-wrap">
+              <img
+                class="product-card-dark-img"
+                src="Images/corn-800.jpg"
+                srcset="Images/corn-400.jpg 400w, Images/corn-800.jpg 800w"
+                sizes="(max-width: 600px) 50vw, 220px"
+                alt="Frozen Sweet Corn — TheGentlemen Export"
+                width="800" height="800"
+                loading="lazy"
+              />
+              <div class="product-card-dark-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-dark-body">
+              <p class="product-card-dark-tag">IQF Kernels</p>
+              <h3 class="product-card-dark-name">Frozen Sweet Corn</h3>
+              <div class="product-card-dark-line" aria-hidden="true"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FROZEN FRUITS ==================== -->
+    <section class="fruits-section" id="frozen-fruits" aria-labelledby="fruits-heading">
+      <div class="fruits-inner">
+        <div class="section-header">
+          <p class="section-num reveal" aria-hidden="true">03</p>
+          <p class="section-tag reveal" style="transition-delay:0.05s">Frozen Fruits</p>
+          <h2 class="fruits-title reveal" id="fruits-heading" style="transition-delay:0.1s">
+            Naturally Sweet,<br>IQF Preserved
+          </h2>
+        </div>
+
+        <div class="product-grid-3">
+          <!-- Strawberries -->
+          <article class="product-card reveal" style="transition-delay:0.1s">
+            <div class="product-card-img-wrap">
+              <img
+                class="product-card-img"
+                src="Images/strawberries-800.jpg"
+                srcset="Images/strawberries-400.jpg 400w, Images/strawberries-800.jpg 800w"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Frozen Strawberries — TheGentlemen Export"
+                width="800" height="600"
+                loading="lazy"
+              />
+              <div class="product-card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-tag">IQF Whole / Halved</p>
+              <h3 class="product-card-name">Frozen Strawberries</h3>
+              <p class="product-card-desc">
+                Egyptian strawberries renowned for their exceptional sweetness and vibrant
+                red colour. IQF-preserved at peak ripeness for premium smoothie and
+                confectionery markets.
+              </p>
+              <div class="product-card-footer">
+                <span class="product-card-brand">TheGentlemen Export</span>
+                <div class="product-card-icon" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mango -->
+          <article class="product-card reveal" style="transition-delay:0.2s">
+            <div class="product-card-img-wrap">
+              <img
+                class="product-card-img"
+                src="Images/mango-800.jpg"
+                srcset="Images/mango-400.jpg 400w, Images/mango-800.jpg 800w"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Frozen Mango Chunks — TheGentlemen Export"
+                width="800" height="600"
+                loading="lazy"
+              />
+              <div class="product-card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-tag">IQF Chunks / Slices</p>
+              <h3 class="product-card-name">Frozen Mango Chunks</h3>
+              <p class="product-card-desc">
+                Sun-ripened Egyptian mango — rich, tropical flavour locked in through
+                rapid IQF processing. A high-demand export commodity for juice, yogurt,
+                and dessert applications.
+              </p>
+              <div class="product-card-footer">
+                <span class="product-card-brand">TheGentlemen Export</span>
+                <div class="product-card-icon" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Mixed Vegetables -->
+          <article class="product-card reveal" style="transition-delay:0.3s">
+            <div class="product-card-img-wrap">
+              <img
+                class="product-card-img"
+                src="Images/mixed-veggies-800.jpg"
+                srcset="Images/mixed-veggies-400.jpg 400w, Images/mixed-veggies-800.jpg 800w"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Frozen Mixed Vegetables — TheGentlemen Export"
+                width="800" height="600"
+                loading="lazy"
+              />
+              <div class="product-card-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-tag">IQF Custom Blend</p>
+              <h3 class="product-card-name">Frozen Mixed Vegetables</h3>
+              <p class="product-card-desc">
+                A versatile, ready-to-cook blend of premium Egyptian vegetables. Custom
+                blend ratios available for foodservice operators, meal-kit companies
+                and private label buyers.
+              </p>
+              <div class="product-card-footer">
+                <span class="product-card-brand">TheGentlemen Export</span>
+                <div class="product-card-icon" aria-hidden="true">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== B2B ORDER PROCESS ==================== -->
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <div class="timeline-inner">
+        <p class="section-tag reveal" style="justify-content:center">Export Process</p>
+        <h2 class="timeline-title reveal" id="timeline-heading" style="transition-delay:0.1s">
+          How to Place a B2B Order
+        </h2>
+        <p class="timeline-subtitle reveal" style="transition-delay:0.15s">
+          Our export process is straightforward. Tell us what you need and we handle the rest.
+        </p>
+
+        <div class="timeline-steps" role="list">
+          <!-- Step 1 -->
+          <div class="timeline-step reveal" role="listitem" style="transition-delay:0.1s">
+            <div class="timeline-num" aria-hidden="true">1</div>
+            <h3 class="timeline-step-title">Submit Your Inquiry</h3>
+            <p class="timeline-step-desc">
+              Contact our export team with your required products, quantities, and destination market.
+            </p>
+          </div>
+
+          <!-- Connector -->
+          <div class="timeline-connector" aria-hidden="true">
+            <div class="timeline-dash"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step reveal" role="listitem" style="transition-delay:0.2s">
+            <div class="timeline-num" aria-hidden="true">2</div>
+            <h3 class="timeline-step-title">Receive a Custom Quote</h3>
+            <p class="timeline-step-desc">
+              We prepare a tailored export offer with pricing, packaging options, and shipping terms (FOB/CIF/EXW).
+            </p>
+          </div>
+
+          <!-- Connector -->
+          <div class="timeline-connector" aria-hidden="true">
+            <div class="timeline-dash"></div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step reveal" role="listitem" style="transition-delay:0.3s">
+            <div class="timeline-num" aria-hidden="true">3</div>
+            <h3 class="timeline-step-title">Confirm &amp; We Ship</h3>
+            <p class="timeline-step-desc">
+              Upon agreement, we handle all export documentation, cold-chain logistics, and timely delivery to your port.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== QUALITY PROMO ==================== -->
+    <section class="promo-section" aria-labelledby="promo-heading">
+      <div class="promo-inner">
+        <div class="promo-img-wrap reveal-left">
+          <div class="promo-img-frame">
+            <img
+              src="Images/exportbuildings.png"
+              alt="TheGentlemen for Export — Egyptian export facility"
+              width="800" height="600"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="promo-text reveal-right">
+          <p class="section-tag">Why TheGentlemen</p>
+          <h2 class="promo-title" id="promo-heading">
+            Quality You Can Trust<br>
+            From Egypt to the World
+          </h2>
+          <div class="gold-rule" aria-hidden="true"></div>
+          <p class="promo-body">
+            We source only the finest Egyptian produce, selected at peak season from
+            trusted farms across Egypt's most fertile growing regions. Every batch
+            undergoes rigorous quality control before entering our cold chain.
+          </p>
+          <p class="promo-body">
+            Our IQF process locks in nutrients and flavour within hours of harvest.
+            Products are packed to international food safety standards, fully export-documented,
+            and shipped in an unbroken cold chain to your port of choice.
+          </p>
+          <a href="contact.html" class="btn-primary">
+            Get a Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA STRIP ==================== -->
+    <section class="cta-strip" aria-labelledby="cta-heading">
+      <div class="cta-strip-inner">
+        <h2 class="cta-strip-title reveal" id="cta-heading">
+          Ready to Place Your First Order?
+        </h2>
+        <p class="cta-strip-sub reveal" style="transition-delay:0.1s">
+          Speak directly with our export team about quantities, shipping terms, and pricing.
+        </p>
+        <a href="contact.html" class="btn-navy reveal" style="transition-delay:0.2s">
+          Contact Export Team <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand-name">The<span>Gentlemen</span> for Export</p>
+        <p class="footer-brand-tagline">Exporting Quality From Egypt, Worldwide</p>
+        <div class="footer-gold-rule" aria-hidden="true"></div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <!-- TODO: Replace placeholders with real contact information -->
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>Cairo, Egypt</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <span>+20 [Your Phone Number]</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>[Your Email Address]</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <div class="social-icons">
+          <!-- TODO: Replace # with real social media profile URLs -->
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <span class="footer-preview-badge">Design Preview — Not Live</span>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    /* ── Header scroll class ── */
+    const header = document.getElementById('site-header');
+    const onScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ── Hamburger / mobile nav ── */
+    const hamburger  = document.getElementById('hamburger');
+    const mobileNav  = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    /* Close mobile nav when a link is clicked */
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ── Intersection Observer — reveal animations ── */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // Immediately show elements already in the viewport — avoids the async observer delay flinch
+    revealEls.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('visible');
+        observer.unobserve(el);
+      }
+    });
+  </script>
+
 </body>
 </html>

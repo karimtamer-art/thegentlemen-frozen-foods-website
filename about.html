@@ -1,105 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us — TheGentlemen Frozen Foods</title>
-    <meta name="description" content="Learn about TheGentlemen for Export — an Egyptian frozen food exporter founded in 2023, delivering premium IQF vegetables, fruits, and French fries to global B2B markets." />
-    <!-- Favicon: suppresses browser 404 for favicon.ico -->
-    <link rel="icon" href="data:," />
-    <!-- Preconnect to Font Awesome CDN -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Font Awesome loaded asynchronously to reduce render-blocking -->
-    <link rel="stylesheet" media="print" onload="this.media='all'"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    </noscript>
-  </head>
-  <body>
-    <!-- Unified Header -->
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <!-- Logo as link — avoids duplicate H1 since this page has its own H1 below -->
-          <a href="index.html" class="logo-link">THEGENTLEMEN</a>
-        </div>
-        <nav class="navbar">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="export.html">Export</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="mobile-menu">
-          <i class="fas fa-bars"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — TheGentlemen for Export</title>
+  <meta name="description" content="Learn about TheGentlemen for Export — an Egyptian frozen food exporter founded in 2023, delivering premium IQF vegetables, fruits, and French fries to global B2B markets." />
+  <link rel="icon" href="data:," />
+  <script>document.documentElement.classList.add('no-trans')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=optional" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
+
+</head>
+<body id="page-about">
+
+  <!-- ══ HEADER ══ -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">THE<span>GENTLEMEN</span></a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" class="active">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" id="nav-overlay"></div>
+  <nav class="mobile-nav-panel" id="mobile-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="active">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="export.html">Export</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-left-inner">
+          <p class="hero-label">Our Story</p>
+          <h1 class="hero-title">
+            Our Story,<br>
+            Your <em>Trust.</em>
+          </h1>
+          <p class="hero-subtitle">
+            Since 2023, we've built trusted partnerships with B2B buyers across
+            global markets — delivering premium Egyptian frozen food products
+            with consistency, care, and reliability.
+          </p>
+          <div class="hero-scroll">
+            <span class="hero-scroll-line"></span>
+            Scroll to explore
+          </div>
         </div>
       </div>
-    </header>
-
-    <main>
-
-    <!-- About Hero -->
-    <section class="about-hero">
-      <div class="about-hero-media">
+      <div class="hero-right">
         <picture>
-          <!-- Modern browsers: WebP with responsive variants -->
           <source
             type="image/webp"
             srcset="
               Images/responsive_images_optimized/opt_400.webp   400w,
               Images/responsive_images_optimized/opt_750.webp   750w,
               Images/responsive_images_optimized/opt_1080.webp 1080w,
-              Images/responsive_images_optimized/opt_1366.webp 1366w,
-              Images/responsive_images_optimized/opt_1600.webp 1600w,
-              Images/responsive_images_optimized/opt_1920.webp 1920w
+              Images/responsive_images_optimized/opt_1600.webp 1600w
             "
-            sizes="100vw"
+            sizes="50vw"
           />
-          <!-- Fallback: PNG responsive variants (and default src) -->
           <img
             src="Images/about-hero.png"
             srcset="
               Images/responsive_images_optimized/opt_750.png  750w,
               Images/responsive_images_optimized/opt_1920.png 1920w
             "
-            sizes="100vw"
-            loading="lazy"
-            alt="Frozen food export facility and logistics background"
+            sizes="50vw"
+            alt="TheGentlemen frozen food export facility"
           />
         </picture>
-      </div>
-      <div class="hero-content">
-        <h1 class="fade-in">Our Story, Your Trust</h1>
-        <p class="fade-in delay-1">
-          Since our founding in 2023, we've built trusted partnerships with
-          B2B buyers across global markets — delivering premium Egyptian frozen
-          food products with consistency, care, and reliability.
-        </p>
+        <div class="hero-year">
+          <div class="hero-year-num">2023</div>
+          <div class="hero-year-label">Founded</div>
+        </div>
       </div>
     </section>
-    <!-- About Story -->
-    <section class="about-section">
-      <div class="container">
-        <div class="section-title fade-in">
-          <h2>About TheGentlemen Foods</h2>
-          <p>Global leaders in frozen food excellence</p>
+
+    <!-- ══ STATS STRIP ══ -->
+    <div class="stats-strip">
+      <div class="stats-inner">
+        <div class="stat-item reveal delay-100">
+          <div class="stat-num">2023</div>
+          <div class="stat-label">Year Founded</div>
         </div>
-        <div class="about-content">
-          <div class="about-image fade-in">
-            <img
-              src="Images/z-image_00010_.png"
-              alt="TheGentlemen frozen food processing facility with workers in hygienic uniforms"
-              width="600"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-          <div class="about-text fade-in delay-1">
-            <h3>Your Global Partner in Frozen Food Excellence</h3>
+        <div class="stat-item reveal delay-200">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Active Export Markets</div>
+        </div>
+        <div class="stat-item reveal delay-300">
+          <div class="stat-num">IQF</div>
+          <div class="stat-label">Processing Standard</div>
+        </div>
+        <div class="stat-item reveal delay-400">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Egyptian Origin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ STORY ══ -->
+    <section class="story">
+      <div class="story-inner">
+        <div class="story-image-wrap reveal-left">
+          <img
+            class="story-image-main"
+            src="Images/z-image_00010_.png"
+            alt="TheGentlemen frozen food processing facility"
+            loading="lazy"
+          />
+          <img
+            class="story-image-accent"
+            src="Images/mixed-veggies-800.jpg"
+            alt="Premium frozen vegetables"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal-right">
+          <div class="story-num">01</div>
+          <p class="section-tag">Who We Are</p>
+          <h2 class="story-title">
+            Your Global Partner in<br>
+            <em>Frozen Food Excellence</em>
+          </h2>
+          <div class="gold-rule"></div>
+          <div class="story-body">
             <p>
               Founded in 2023, TheGentlemen for Export has grown from an
               ambitious Egyptian export startup into a trusted international
@@ -110,102 +162,272 @@
             <p>
               We specialize in sourcing, processing, and exporting a wide range
               of premium frozen foods — including French fries, vegetables, and
-              fruits — sourced from Egyptian farms. Our cold-chain facilities
-              ensure every product we deliver maintains peak freshness,
-              nutritional value, and taste from our Egyptian facilities to your
-              table.
+              fruits — sourced from Egypt's finest agricultural regions. Our
+              cold-chain facilities ensure every product maintains peak
+              freshness, nutritional value, and taste.
             </p>
             <p>
               Our rigorous quality control measures and export logistics
               capabilities allow us to offer competitive pricing without
-              compromising on the premium standards that define TheGentlemen
-              brand.
+              compromising on the premium standards that define TheGentlemen brand.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Values -->
-    <section class="mv-values">
-      <div class="container">
-        <div class="section-title fade-in">
-          <h2>Our Core Principles</h2>
-          <p>The foundation of everything we do</p>
+    <!-- ══ PRINCIPLES ══ -->
+    <section class="principles">
+      <div class="principles-inner">
+        <div class="principles-header">
+          <div class="reveal-left">
+            <p class="section-tag" style="color: var(--gold);">Core Principles</p>
+            <h2 class="principles-title">
+              The Foundation<br>
+              of <em>Everything</em><br>
+              We Do
+            </h2>
+          </div>
+          <p class="principles-desc reveal-right">
+            Three pillars that guide every decision,
+            every shipment, and every partnership
+            we build around the world.
+          </p>
         </div>
-        <div class="mv-container">
-          <div class="mv-card fade-in">
-            <i class="fas fa-bullseye"></i>
-            <h3>Mission</h3>
-            <p>
+
+        <div class="principles-grid">
+          <div class="principle-card reveal delay-100" data-num="01">
+            <div class="principle-icon"><i class="fas fa-bullseye"></i></div>
+            <h3 class="principle-name">Mission</h3>
+            <p class="principle-text">
               To deliver premium quality frozen foods that bridge continents,
               connecting producers with markets through innovation, reliability,
               and exceptional service standards.
             </p>
+            <div class="principle-rule"></div>
           </div>
-          <div class="mv-card fade-in delay-1">
-            <i class="fas fa-eye"></i>
-            <h3>Vision</h3>
-            <p>
+          <div class="principle-card reveal delay-200" data-num="02">
+            <div class="principle-icon"><i class="fas fa-eye"></i></div>
+            <h3 class="principle-name">Vision</h3>
+            <p class="principle-text">
               To redefine global frozen food distribution by 2030 through
               sustainable practices, cutting-edge cold chain technology, and
-              pioneering product development.
+              pioneering product development that sets new industry benchmarks.
             </p>
+            <div class="principle-rule"></div>
           </div>
-          <div class="mv-card fade-in delay-2">
-            <i class="fas fa-heart"></i>
-            <h3>Values</h3>
-            <p>
+          <div class="principle-card reveal delay-300" data-num="03">
+            <div class="principle-icon"><i class="fas fa-heart"></i></div>
+            <h3 class="principle-name">Values</h3>
+            <p class="principle-text">
               Integrity in sourcing, excellence in quality, innovation in
-              solutions, responsibility in sustainability, and partnership in
-              every relationship.
+              solutions, responsibility in sustainability, and genuine
+              partnership in every business relationship we cultivate.
             </p>
+            <div class="principle-rule"></div>
           </div>
         </div>
       </div>
     </section>
 
-    </main>
+    <!-- ══ PHILOSOPHY QUOTE ══ -->
+    <section class="philosophy">
+      <div class="philosophy-inner reveal">
+        <p class="philosophy-quote">
+          "We don't just export frozen food — we export
+          <strong>Egyptian agricultural excellence</strong>,
+          preserved at its peak and delivered with the trust
+          that only a true partner can provide."
+        </p>
+        <p class="philosophy-attr">TheGentlemen for Export, Cairo 2023</p>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-logo">
-          <h3>TheGentlemen for Export</h3>
-          <p>Exporting Quality From Egypt, Worldwide</p>
+    <!-- ══ ORIGIN — FROM EGYPT TO THE WORLD ══ -->
+    <section class="origin">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            Images/hero-800.webp   800w,
+            Images/hero-1200.webp 1200w
+          "
+          sizes="100vw"
+        />
+        <img
+          class="origin-bg"
+          src="Images/hero-1200.jpg"
+          alt="Egyptian agricultural landscape"
+          loading="lazy"
+        />
+      </picture>
+      <div class="origin-overlay"></div>
+      <div class="origin-inner">
+        <div class="origin-left reveal-left">
+          <p class="section-tag">Our Reach</p>
+          <h2 class="origin-title">
+            From <span>Egypt</span><br>
+            To The World
+          </h2>
+          <p class="origin-body">
+            Rooted in Egypt's fertile lands, our products travel thousands of
+            miles to reach the tables and kitchens of our global partners.
+            We currently ship to four international markets and continue
+            to expand our footprint.
+          </p>
+          <div class="origin-markets">
+            <span class="market-chip">🇬🇧 United Kingdom</span>
+            <span class="market-chip">🇰🇼 Kuwait</span>
+            <span class="market-chip">🇦🇪 UAE</span>
+            <span class="market-chip">🇸🇦 Saudi Arabia</span>
+          </div>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="export.html">Export</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <!-- TODO: Replace these placeholders with your real contact information -->
-          <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-          <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
-          <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
-        </div>
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="social-icons">
-            <!-- TODO: Replace # with your real social media profile URLs -->
-            <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="origin-right reveal-right">
+          <div class="origin-img-wrap">
+            <img src="Images/fries-800.jpg" alt="Premium French fries export" loading="lazy" />
+          </div>
+          <div class="origin-img-wrap">
+            <img src="Images/Brocoli-800.jpg" alt="Frozen broccoli" loading="lazy" />
+          </div>
+          <div class="origin-img-wrap">
+            <img src="Images/strawberries-800.jpg" alt="Frozen strawberries" loading="lazy" />
           </div>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
-      </div>
-    </footer>
+    </section>
 
-    <script src="js/script.js"></script>
-  </body>
+    <!-- ══ CTA ══ -->
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Ready to Partner With Us?</h2>
+        <p class="cta-sub">
+          Whether you're an importer, distributor, or retailer — we'd love
+          to discuss how TheGentlemen can become your trusted frozen food supplier.
+        </p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn-dark">Get In Touch</a>
+          <a href="products.html" class="btn-ghost">Explore Products</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3 class="footer-brand-name">TheGentlemen<br>for Export</h3>
+        <p class="footer-brand-tagline">
+          Exporting Quality From Egypt, Worldwide
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i> +20 [Your Phone Number]</div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i> [Your Email Address]</div>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <p>Design Preview — Not Live</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Header: add .scrolled class after 20px ──
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // ── Mobile Nav ──
+    const hamburger   = document.getElementById('hamburger');
+    const mobileNav   = document.getElementById('mobile-nav');
+    const navOverlay  = document.getElementById('nav-overlay');
+
+    function openNav()  { mobileNav.classList.add('open'); navOverlay.classList.add('open'); }
+    function closeNav() { mobileNav.classList.remove('open'); navOverlay.classList.remove('open'); }
+
+    hamburger.addEventListener('click', openNav);
+    navOverlay.addEventListener('click', closeNav);
+
+    // ── IntersectionObserver: reveal animations ──
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => io.observe(el));
+
+    // Immediately show elements already in the viewport — avoids the async observer delay flinch
+    revealEls.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('visible');
+        io.unobserve(el);
+      }
+    });
+
+    // ── Stats counter animation ──
+    const statNums = document.querySelectorAll('.stat-num');
+
+    const counterIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const raw = el.textContent.trim();
+        const num = parseFloat(raw);
+        if (isNaN(num)) { counterIo.unobserve(el); return; }
+
+        const suffix = raw.replace(String(num), '');
+        const duration = 1200;
+        const steps = 50;
+        const increment = num / steps;
+        let current = 0;
+        let count = 0;
+
+        const tick = () => {
+          count++;
+          current = count >= steps ? num : current + increment;
+          el.textContent = (Number.isInteger(num)
+            ? Math.round(current)
+            : current.toFixed(1)) + suffix;
+          if (count < steps) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+        counterIo.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    statNums.forEach(el => counterIo.observe(el));
+  </script>
+</body>
 </html>

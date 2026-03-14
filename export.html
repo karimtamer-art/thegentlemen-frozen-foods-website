@@ -1,157 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Export Services — TheGentlemen Frozen Foods</title>
-    <meta name="description" content="TheGentlemen for Export offers reliable frozen food export from Egypt to global markets. Explore our export achievements, target markets, and get a custom B2B quote." />
-    <!-- Favicon: suppresses browser 404 for favicon.ico -->
-    <link rel="icon" href="data:," />
-    <!-- Preconnect to Font Awesome CDN -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Font Awesome loaded asynchronously to reduce render-blocking -->
-    <link rel="stylesheet" media="print" onload="this.media='all'"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <noscript>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    </noscript>
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <!-- Logo as link — avoids duplicate H1 since this page has its own H1 below -->
-          <a href="index.html" class="logo-link">THEGENTLEMEN</a>
-        </div>
-        <nav class="navbar">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="export.html" class="active">Export</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="mobile-menu">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Export — TheGentlemen for Export</title>
+  <meta name="description" content="TheGentlemen for Export delivers premium Egyptian frozen foods to global markets — UK, Kuwait, UAE, Saudi Arabia and beyond. IQF-processed, cold-chain certified." />
+  <link rel="icon" href="data:," />
+  <script>document.documentElement.classList.add('no-trans')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=optional" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <main>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
 
-    <section class="hero-export">
-      <div>
-        <h1>Exporting Premium Frozen Foods Worldwide</h1>
-        <p>
+</head>
+<body id="page-export">
+
+  <!-- ══ HEADER ══ -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">THE<span>GENTLEMEN</span></a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html" class="active">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" id="nav-overlay"></div>
+  <nav class="mobile-nav-panel" id="mobile-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="export.html" class="active">Export</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ══ HERO — CINEMATIC FULL-SCREEN ══ -->
+    <section class="hero">
+      <img
+        class="hero-bg"
+        src="Images/exportbuildings.png"
+        alt="International export trade buildings"
+      />
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="hero-label"><i class="fas fa-globe-americas"></i> Global Export</p>
+        <h1 class="hero-title">
+          Exporting Premium<br>
+          Frozen Foods <em>Worldwide</em>
+        </h1>
+        <p class="hero-subtitle">
           We deliver high-quality frozen products to global markets, ensuring
           freshness, sustainability, and reliability in every shipment.
         </p>
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn-gold">Get Export Quote</a>
+          <a href="products.html" class="btn-ghost-white">Our Products</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="hero-scroll-mouse">
+          <div class="hero-scroll-dot"></div>
+        </div>
+        Scroll
       </div>
     </section>
 
-
-     
-<!-- Statistics Section -->
-<section class="haveexport-section">
-  <h2>Our Export Achievements</h2>
-  <div class="haveexport-container">
-    <div class="haveexport-grid haveexport-grid-3">
-      <div class="haveexport-card">
-        <h3>Countries Served</h3>
-        <div class="haveexport-stat-counter" id="countries">0</div>
-      </div>
-      <div class="haveexport-card">
-        <h3>Years of Experience</h3>
-        <div class="haveexport-stat-counter" id="years">0</div>
-      </div>
-      <div class="haveexport-card">
-        <h3>Total Clients</h3>
-        <div class="haveexport-stat-counter" id="clients">0</div>
+    <!-- ══ STATS STRIP ══ -->
+    <div class="stats-strip">
+      <div class="stats-inner">
+        <div class="stat-item reveal delay-100">
+          <div class="stat-num" data-target="4" data-suffix="">4</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+        <div class="stat-item reveal delay-200">
+          <div class="stat-num" data-target="3" data-suffix="">3</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-item reveal delay-300">
+          <div class="stat-num stat-static">Growing</div>
+          <div class="stat-label">Total Clients</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Countries Section -->
-<!-- TODO: Update this list to reflect your actual current and target export markets -->
-<section class="haveexport-countries">
-  <h2>Countries We Export To</h2>
-  <div class="haveexport-container">
-    <div class="haveexport-grid-countries haveexport-grid-countries-4">
-      <div class="haveexport-card-country">
-        <img src="https://flagcdn.com/w320/gb.png" alt="United Kingdom Flag" width="100" height="67" loading="lazy">
-        <p>United Kingdom</p>
-      </div>
-      <div class="haveexport-card-country">
-        <img src="https://flagcdn.com/w320/kw.png" alt="Kuwait Flag" width="100" height="67" loading="lazy">
-        <p>Kuwait</p>
-      </div>
-      <div class="haveexport-card-country">
-        <img src="https://flagcdn.com/w320/ae.png" alt="United Arab Emirates Flag" width="100" height="67" loading="lazy">
-        <p>United Arab Emirates</p>
-      </div>
-      <div class="haveexport-card-country">
-        <img src="https://flagcdn.com/w320/sa.png" alt="Saudi Arabia Flag" width="100" height="67" loading="lazy">
-        <p>Saudi Arabia</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <section class="contact-cta">
-      <div class="container">
-        <h3>Ready to Expand Globally?</h3>
-        <p>Let our export experts guide you through the process</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn-primary">Contact Export Team</a>
+    <!-- ══ EXPORT CAPABILITIES ══ -->
+    <section class="capabilities">
+      <div class="capabilities-inner">
+        <div class="section-header reveal">
+          <p class="section-tag">What We Offer</p>
+          <h2 class="section-title">A Complete Export Solution</h2>
         </div>
-      </div>
-    </section>
-
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-logo">
-          <h3>TheGentlemen for Export</h3>
-          <p>Exporting Quality From Egypt, Worldwide</p>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="export.html">Export</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <!-- TODO: Replace these placeholders with your real contact information -->
-          <p><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-          <p><i class="fas fa-phone"></i> +20 [Your Phone Number]</p>
-          <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
-        </div>
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="social-icons">
-            <!-- TODO: Replace # with your real social media profile URLs -->
-            <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="capabilities-grid">
+          <div class="capability-card reveal delay-100">
+            <div class="capability-icon"><i class="fas fa-certificate"></i></div>
+            <h3 class="capability-name">Quality Certifications</h3>
+            <p class="capability-text">
+              Certified quality and efficient shipping solutions for international
+              peace of mind. Every product leaves our facilities meeting the
+              highest global standards.
+            </p>
+            <div class="capability-rule"></div>
+          </div>
+          <div class="capability-card reveal delay-200">
+            <div class="capability-icon"><i class="fas fa-shipping-fast"></i></div>
+            <h3 class="capability-name">Global Logistics</h3>
+            <p class="capability-text">
+              Our team understands the nuances of international markets to serve
+              you better with cold-chain integrity — from Egypt's processing
+              facilities to your warehouse door.
+            </p>
+            <div class="capability-rule"></div>
+          </div>
+          <div class="capability-card reveal delay-300">
+            <div class="capability-icon"><i class="fas fa-handshake"></i></div>
+            <h3 class="capability-name">Trusted Partnership</h3>
+            <p class="capability-text">
+              We prioritize your satisfaction with every shipment, building
+              lasting relationships rooted in transparency, consistency, and
+              genuine commercial partnership.
+            </p>
+            <div class="capability-rule"></div>
           </div>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
-      </div>
-    </footer>
+    </section>
 
-    <script src="js/script.js"></script>
-  </body>
+    <!-- ══ MARKETS WE EXPORT TO ══ -->
+    <section class="markets">
+      <div class="markets-inner">
+        <div class="markets-header reveal">
+          <p class="section-tag" style="color: var(--gold); justify-content: center;">Our Reach</p>
+          <h2 class="markets-title">Countries We Export To</h2>
+          <p class="markets-subtitle">Currently active in 4 international markets and expanding</p>
+        </div>
+        <div class="markets-grid">
+          <div class="market-card reveal delay-100">
+            <div class="market-flag-wrap">
+              <img
+                src="https://flagcdn.com/w320/gb.png"
+                alt="Flag of United Kingdom"
+                loading="lazy"
+              />
+            </div>
+            <p class="market-name">United Kingdom</p>
+          </div>
+          <div class="market-card reveal delay-200">
+            <div class="market-flag-wrap">
+              <img
+                src="https://flagcdn.com/w320/kw.png"
+                alt="Flag of Kuwait"
+                loading="lazy"
+              />
+            </div>
+            <p class="market-name">Kuwait</p>
+          </div>
+          <div class="market-card reveal delay-300">
+            <div class="market-flag-wrap">
+              <img
+                src="https://flagcdn.com/w320/ae.png"
+                alt="Flag of United Arab Emirates"
+                loading="lazy"
+              />
+            </div>
+            <p class="market-name">United Arab Emirates</p>
+          </div>
+          <div class="market-card reveal delay-400">
+            <div class="market-flag-wrap">
+              <img
+                src="https://flagcdn.com/w320/sa.png"
+                alt="Flag of Saudi Arabia"
+                loading="lazy"
+              />
+            </div>
+            <p class="market-name">Saudi Arabia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EXPORT PROCESS ══ -->
+    <section class="process">
+      <div class="process-inner">
+        <div class="process-header reveal">
+          <p class="section-tag">Our Method</p>
+          <h2 class="section-title">How Our Export Works</h2>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal delay-100">
+            <div class="step-circle">01</div>
+            <h3 class="step-title">Source</h3>
+            <p class="step-desc">
+              We select the finest Egyptian produce from trusted farms and
+              agricultural partners, ensuring only premium-grade ingredients
+              enter our supply chain.
+            </p>
+          </div>
+          <div class="process-step reveal delay-200">
+            <div class="step-circle">02</div>
+            <h3 class="step-title">Process</h3>
+            <p class="step-desc">
+              IQF processing under strict cold-chain conditions locks in
+              freshness, nutritional value, and taste at the moment of peak
+              quality.
+            </p>
+          </div>
+          <div class="process-step reveal delay-300">
+            <div class="step-circle">03</div>
+            <h3 class="step-title">Document</h3>
+            <p class="step-desc">
+              Full export documentation, certifications, and customs clearance
+              handled by our experienced trade compliance team — zero friction
+              at the border.
+            </p>
+          </div>
+          <div class="process-step reveal delay-400">
+            <div class="step-circle">04</div>
+            <h3 class="step-title">Deliver</h3>
+            <p class="step-desc">
+              Timely delivery to your port with cold-chain integrity maintained
+              end-to-end — your product arrives exactly as it left our
+              facility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FULL-WIDTH QUOTE BANNER ══ -->
+    <div class="quote-banner">
+      <img
+        class="quote-banner-bg"
+        src="Images/hero-1200.jpg"
+        alt="Egyptian agricultural landscape"
+        loading="lazy"
+      />
+      <div class="quote-banner-overlay"></div>
+      <div class="quote-banner-content reveal">
+        <p class="quote-text">
+          From the fields of Egypt, to the world's finest kitchens.
+        </p>
+        <div class="quote-rule"></div>
+      </div>
+    </div>
+
+    <!-- ══ CTA STRIP ══ -->
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Ready to Expand Globally?</h2>
+        <p class="cta-sub">
+          Let our export experts guide you through the process — from product
+          selection to cold-chain delivery at your destination port.
+        </p>
+        <a href="contact.html" class="btn-dark">Contact Export Team</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3 class="footer-brand-name">TheGentlemen<br>for Export</h3>
+        <p class="footer-brand-tagline">
+          Exporting Quality From Egypt, Worldwide
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i> +20 [Your Phone Number]</div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i> [Your Email Address]</div>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <p>Design Preview — Not Live</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Header: add .scrolled class after 20px ──
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // ── Mobile Nav ──
+    const hamburger  = document.getElementById('hamburger');
+    const mobileNav  = document.getElementById('mobile-nav');
+    const navOverlay = document.getElementById('nav-overlay');
+
+    function openNav()  { mobileNav.classList.add('open'); navOverlay.classList.add('open'); }
+    function closeNav() { mobileNav.classList.remove('open'); navOverlay.classList.remove('open'); }
+
+    hamburger.addEventListener('click', openNav);
+    navOverlay.addEventListener('click', closeNav);
+
+    // ── IntersectionObserver: reveal animations ──
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => io.observe(el));
+
+    // Immediately show elements already in the viewport — avoids the async observer delay flinch
+    revealEls.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('visible');
+        io.unobserve(el);
+      }
+    });
+
+    // ── Stats counter animation (skip .stat-static elements) ──
+    const statNums = document.querySelectorAll('.stat-num:not(.stat-static)');
+
+    const counterIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        if (isNaN(target)) { counterIo.unobserve(el); return; }
+
+        const duration = 1500;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        let count = 0;
+
+        const tick = () => {
+          count++;
+          current = count >= steps ? target : current + increment;
+          el.textContent = Math.round(current) + suffix;
+          if (count < steps) requestAnimationFrame(tick);
+        };
+
+        el.textContent = '0' + suffix;
+        requestAnimationFrame(tick);
+        counterIo.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    statNums.forEach(el => counterIo.observe(el));
+  </script>
+</body>
 </html>
