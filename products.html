@@ -35,20 +35,25 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile nav -->
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html" class="active">Products</a>
-    <a href="export.html">Export</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-nav-backdrop" id="nav-backdrop"></div>
+    <div class="mobile-nav-panel">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="export.html">Export</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 
   <main>
 
@@ -520,7 +525,7 @@
             Products are packed to international food safety standards, fully export-documented,
             and shipped in an unbroken cold chain to your port of choice.
           </p>
-          <a href="contact.html" class="btn-primary">
+          <a href="contact.html" class="btn-secondary">
             Get a Quote <i class="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
@@ -536,7 +541,7 @@
         <p class="cta-strip-sub reveal" style="transition-delay:0.1s">
           Speak directly with our export team about quantities, shipping terms, and pricing.
         </p>
-        <a href="contact.html" class="btn-navy reveal" style="transition-delay:0.2s">
+        <a href="contact.html" class="btn-secondary reveal" style="transition-delay:0.2s">
           Contact Export Team <i class="fas fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
@@ -583,7 +588,7 @@
 
       <div>
         <p class="footer-col-title">Connect</p>
-        <div class="social-icons">
+        <div class="footer-social">
           <!-- TODO: Replace # with real social media profile URLs -->
           <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
@@ -594,7 +599,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copyright">&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <p class="footer-copy">&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
       <span class="footer-preview-badge">Design Preview — Not Live</span>
     </div>
   </footer>
@@ -609,9 +614,17 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* ── Hamburger / mobile nav ── */
-    const hamburger  = document.getElementById('hamburger');
-    const mobileNav  = document.getElementById('mobile-nav');
+    /* ── Mobile Nav ── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    const backdrop  = document.getElementById('nav-backdrop');
+
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
 
     hamburger.addEventListener('click', () => {
       const isOpen = mobileNav.classList.toggle('open');
@@ -620,14 +633,14 @@
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    /* Close mobile nav when a link is clicked */
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    backdrop.addEventListener('click', closeNav);
+
+    mobileNav.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
     });
 
     /* ── Intersection Observer — reveal animations ── */

@@ -338,11 +338,11 @@
         <h2 class="cta-title">Ready to Partner<br>With Us?</h2>
         <p class="cta-subtitle">Contact our sales team to discuss your frozen food needs — we are ready to supply.</p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn-dark">
+          <a href="contact.html" class="btn-secondary">
             <i class="fas fa-envelope" aria-hidden="true"></i>
             Contact Us
           </a>
-          <a href="products.html" class="btn-outline-dark">
+          <a href="products.html" class="btn-outline">
             <i class="fas fa-box-open" aria-hidden="true"></i>
             View Products
           </a>
@@ -418,12 +418,14 @@
 
     function openNav() {
       mobileNav.classList.add('open');
+      hamburger.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
 
     function closeNav() {
       mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
@@ -433,6 +435,10 @@
     });
 
     backdrop.addEventListener('click', closeNav);
+
+    mobileNav.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeNav();

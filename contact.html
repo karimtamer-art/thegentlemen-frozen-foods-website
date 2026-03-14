@@ -255,14 +255,14 @@
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
 
-      <div class="footer-brand">
-        <p class="brand-name">The<span>Gentlemen</span> for Export</p>
-        <p>Exporting quality frozen foods from Egypt to the world. Founded 2023.</p>
+      <div>
+        <p class="footer-brand-name">The<span>Gentlemen</span> for Export</p>
+        <p class="footer-brand-tagline">Exporting quality frozen foods from Egypt to the world. Founded 2023.</p>
       </div>
 
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="products.html">Products</a></li>
@@ -271,19 +271,26 @@
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4>Contact</h4>
+      <div>
+        <p class="footer-col-title">Contact</p>
         <!-- TODO: Replace placeholders with real contact information -->
-        <ul class="footer-contact-list">
-          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cairo, Egypt</li>
-          <li><i class="fas fa-phone" aria-hidden="true"></i> +20 [Your Phone Number]</li>
-          <li><i class="fas fa-envelope" aria-hidden="true"></i> [Your Email Address]</li>
-        </ul>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>Cairo, Egypt</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <span>+20 [Your Phone Number]</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>[Your Email Address]</span>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <div class="footer-social-icons">
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <div class="footer-social">
           <!-- TODO: Replace # with real social media profile URLs -->
           <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -295,8 +302,8 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
-      <span class="preview-badge">Design Preview — Not Live</span>
+      <p class="footer-copy">&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <span class="footer-preview-badge">Design Preview — Not Live</span>
     </div>
   </footer>
 
@@ -318,31 +325,31 @@
     // ---- Mobile nav toggle ----
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobile-nav');
-    let navOpen = false;
+    const backdrop  = document.getElementById('nav-backdrop');
 
-    function toggleNav(open) {
-      navOpen = open;
-      hamburger.classList.toggle('open', navOpen);
-      mobileNav.classList.toggle('open', navOpen);
-      hamburger.setAttribute('aria-expanded', String(navOpen));
-      document.body.style.overflow = navOpen ? 'hidden' : '';
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
 
-    hamburger.addEventListener('click', () => toggleNav(!navOpen));
-
-    // Close on overlay click
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target === mobileNav) toggleNav(false);
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close on nav link click
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => toggleNav(false));
+    backdrop.addEventListener('click', closeNav);
+
+    mobileNav.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', closeNav);
     });
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navOpen) toggleNav(false);
+      if (e.key === 'Escape') closeNav();
     });
 
     // ---- IntersectionObserver reveal animations ----

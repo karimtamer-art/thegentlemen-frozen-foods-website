@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheGentlemen for Export — Premium Egyptian Frozen Foods</title>
+  <meta name="description" content="TheGentlemen for Export — Egyptian B2B frozen foods exporter. Premium IQF vegetables, fruits and French fries shipped to global markets." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
+
+  <style>
+    /* =============================================
+       DESIGN PREVIEW — TheGentlemen Home Page
+       Aesthetic: Editorial Luxury · Dark Navy + Gold
+    ============================================= */
+
+    :root {
+      --navy:      #0A1628;
+      --navy-mid:  #112240;
+      --navy-soft: #1a3358;
+      --gold:      #C9A84C;
+      --gold-light:#E8C96A;
+      --gold-pale: #f5e9c8;
+      --cream:     #F7F3ED;
+      --green:     #2D7D46;
+      --white:     #FFFFFF;
+      --text:      #2a2a2a;
+      --text-muted:#6b7280;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body:    'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { text-decoration: none; }
+
+    /* ── Noise Texture Overlay ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* =============================================
+       HEADER / NAV
+    ============================================= */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 40px;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo-link {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .logo-link span { color: var(--gold); }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav-list a {
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 2px;
+      transition: color 0.2s;
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active {
+      color: var(--gold);
+    }
+
+    .nav-list a.active {
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    /* Mobile Nav Panel */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+    }
+
+    .mobile-nav.open { display: block; }
+
+    .mobile-nav-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,22,40,0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0; right: 0;
+      width: min(360px, 90vw);
+      height: 100vh;
+      background: var(--navy-mid);
+      padding: 100px 48px 48px;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .mobile-nav.open .mobile-nav-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .mobile-nav-list a {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s;
+    }
+
+    .mobile-nav-list a:hover,
+    .mobile-nav-list a.active { color: var(--gold); }
+
+    /* =============================================
+       HERO — FULL VIEWPORT
+    ============================================= */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 720px;
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 55% 45%;
+      overflow: hidden;
+    }
+
+    /* LEFT panel */
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      padding: 120px 64px 80px 80px;
+    }
+
+    .hero-left-inner { max-width: 580px; }
+
+    .hero-label {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .hero-label::before {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3.2rem, 5.5vw, 6rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title .premium-text {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      max-width: 440px;
+      margin-bottom: 52px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 2px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.7);
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* RIGHT panel — scrolling columns */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left gradient blending left edge into the navy */
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, rgba(10,22,40,0.3) 18%, transparent 40%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Top/bottom gradient masks on image columns */
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, var(--navy) 0%, transparent 12%, transparent 88%, var(--navy) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      height: 100%;
+      padding: 0 12px 0 20px;
+    }
+
+    .hero-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .hero-col-track {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-col:nth-child(1) .hero-col-track {
+      animation: scrollUp 28s linear infinite;
+    }
+
+    .hero-col:nth-child(2) .hero-col-track {
+      animation: scrollDown 32s linear infinite;
+    }
+
+    .hero-col:nth-child(3) .hero-col-track {
+      animation: scrollUp 24s linear infinite;
+    }
+
+    @keyframes scrollUp {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    @keyframes scrollDown {
+      0%   { transform: translateY(-50%); }
+      100% { transform: translateY(0); }
+    }
+
+    .hero-col-track img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       MARQUEE STRIP
+    ============================================= */
+    .marquee-strip {
+      background: var(--cream);
+      border-top: 1px solid rgba(10,22,40,0.08);
+      border-bottom: 1px solid rgba(10,22,40,0.08);
+      padding: 22px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marqueeScroll 35s linear infinite;
+    }
+
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      font-family: var(--ff-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      padding: 0 28px;
+    }
+
+    .marquee-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       OUR STORY
+    ============================================= */
+    .story {
+      background: var(--cream);
+      padding: 120px 80px;
+    }
+
+    .story-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .story-image-wrap {
+      position: relative;
+    }
+
+    .story-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -4px;
+      width: 4px;
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px 0 0 2px;
+    }
+
+    .story-image-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .story-image-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 24px 32px;
+      font-family: var(--ff-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.4);
+    }
+
+    .story-image-badge strong {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .story-text { }
+
+    .story-num {
+      font-family: var(--ff-display);
+      font-size: 8rem;
+      font-weight: 900;
+      color: rgba(10,22,40,0.05);
+      line-height: 1;
+      margin-bottom: -30px;
+      user-select: none;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .section-tag.light { color: rgba(201,168,76,0.85); }
+    .section-tag.light::before { background: rgba(201,168,76,0.85); }
+
+    .story-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .story-body p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .story-body p:last-child { margin-bottom: 0; }
+
+    .gold-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 36px 0;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .text-link:hover { gap: 14px; }
+
+    /* =============================================
+       FEATURED PRODUCTS
+    ============================================= */
+    .products {
+      background: var(--navy);
+      padding: 120px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .products::before {
+      content: 'PRODUCTS';
+      position: absolute;
+      top: 50px;
+      right: -20px;
+      font-family: var(--ff-display);
+      font-size: 10rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .products-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .section-title.light { color: var(--white); }
+    .section-title.dark  { color: var(--navy); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .product-card {
+      background: var(--navy-mid);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover { transform: translateY(-4px); }
+    .product-card:hover::after { transform: scaleX(1); }
+
+    .product-card-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-card-img { transform: scale(1.04); }
+
+    .product-card-body {
+      padding: 32px 36px 40px;
+    }
+
+    .product-card-num {
+      font-family: var(--ff-display);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      color: rgba(201,168,76,0.5);
+      margin-bottom: 12px;
+    }
+
+    .product-card-name {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .product-card-desc {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .product-card-rule {
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 24px;
+      transition: width 0.4s ease;
+    }
+
+    .product-card:hover .product-card-rule { width: 56px; }
+
+    .products-footer {
+      text-align: center;
+      margin-top: 56px;
+    }
+
+    /* =============================================
+       WHY THEGENTLEMEN
+    ============================================= */
+    .why {
+      background: var(--cream);
+      padding: 120px 80px;
+    }
+
+    .why-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .why-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 80px;
+    }
+
+    .why-intro {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      max-width: 420px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .why-card {
+      background: var(--white);
+      padding: 52px 44px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .why-card:hover { background: var(--gold-pale); }
+
+    .why-card-num {
+      font-family: var(--ff-display);
+      font-size: 6rem;
+      font-weight: 900;
+      color: rgba(10,22,40,0.05);
+      line-height: 1;
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .why-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .why-card:hover .why-icon-wrap {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .why-title {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .why-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    .why-rule {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 28px;
+      transition: width 0.4s ease;
+    }
+
+    .why-card:hover .why-rule { width: 64px; }
+
+    /* =============================================
+       CTA STRIP
+    ============================================= */
+    .cta-strip {
+      background: var(--gold);
+      padding: 100px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-strip::before {
+      content: 'EXPORT';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--ff-display);
+      font-size: 14rem;
+      font-weight: 900;
+      color: rgba(10,22,40,0.04);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cta-subtitle {
+      font-size: 1.05rem;
+      color: rgba(10,22,40,0.65);
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 2px;
+      transition: background 0.25s ease;
+    }
+
+    .btn-dark:hover { background: var(--navy-soft); }
+
+    .btn-outline-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--navy);
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 36px;
+      border-radius: 2px;
+      border: 2px solid rgba(10,22,40,0.35);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline-dark:hover {
+      border-color: var(--navy);
+      background: rgba(10,22,40,0.08);
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--navy);
+      padding: 80px 80px 0;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+      gap: 60px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .footer-brand-name span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact-item i {
+      color: var(--gold);
+      margin-top: 3px;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .footer-social a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-preview-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.5);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    /* =============================================
+       SCROLL REVEAL ANIMATIONS
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .hero-right { display: none; }
+
+      .hero-left {
+        padding: 140px 40px 80px;
+        align-items: flex-start;
+      }
+
+      .story-inner,
+      .why-header {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .story-image-wrap { max-width: 480px; }
+
+      .products-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .story,
+      .products,
+      .why,
+      .cta-strip {
+        padding: 80px 40px;
+      }
+
+      .footer { padding: 64px 40px 0; }
+
+      .products-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-list { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-left {
+        padding: 120px 24px 60px;
+      }
+
+      .header { padding: 0 24px; }
+
+      .story,
+      .products,
+      .why,
+      .cta-strip {
+        padding: 64px 24px;
+      }
+
+      .footer { padding: 48px 24px 0; }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-actions { flex-direction: column; }
+
+      .products-grid {
+        gap: 16px;
+      }
+
+      .why-grid {
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">THE<span>GENTLEMEN</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── MOBILE NAV ─── -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-nav-backdrop" id="nav-backdrop"></div>
+    <div class="mobile-nav-panel">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="export.html">Export</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" aria-label="Hero">
+      <!-- Left text panel -->
+      <div class="hero-left">
+        <div class="hero-left-inner">
+          <p class="hero-label">Premium Egyptian Export</p>
+          <h1 class="hero-title">
+            <span class="premium-text">Premium</span><br>
+            Frozen Foods<br>
+            Worldwide
+          </h1>
+          <p class="hero-subtitle">
+            Exporting quality frozen vegetables, fruits and French fries to global markets — IQF-processed and cold-chain secured from Egypt.
+          </p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn-primary">
+              Explore Our Products
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="about.html" class="btn-ghost">
+              Learn About Us
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right scrolling image columns -->
+      <div class="hero-right" aria-hidden="true">
+        <div class="hero-columns">
+          <!-- Column 1: scroll up -->
+          <div class="hero-col">
+            <div class="hero-col-track">
+              <img src="../Images/green-beans-800.jpg" alt="" />
+              <img src="../Images/mixed-veggies-800.jpg" alt="" />
+              <img src="../Images/strawberries-800.jpg" alt="" />
+              <img src="../Images/carrots-800.jpg" alt="" />
+              <!-- Doubled for seamless loop -->
+              <img src="../Images/green-beans-800.jpg" alt="" />
+              <img src="../Images/mixed-veggies-800.jpg" alt="" />
+              <img src="../Images/strawberries-800.jpg" alt="" />
+              <img src="../Images/carrots-800.jpg" alt="" />
+            </div>
+          </div>
+          <!-- Column 2: scroll down -->
+          <div class="hero-col">
+            <div class="hero-col-track">
+              <img src="../Images/mango-800.jpg" alt="" />
+              <img src="../Images/fries-800.jpg" alt="" />
+              <img src="../Images/califlur-800.jpg" alt="" />
+              <img src="../Images/beans-800.jpg" alt="" />
+              <!-- Doubled -->
+              <img src="../Images/mango-800.jpg" alt="" />
+              <img src="../Images/fries-800.jpg" alt="" />
+              <img src="../Images/califlur-800.jpg" alt="" />
+              <img src="../Images/beans-800.jpg" alt="" />
+            </div>
+          </div>
+          <!-- Column 3: scroll up -->
+          <div class="hero-col">
+            <div class="hero-col-track">
+              <img src="../Images/mixedVeggiesBag-800.jpg" alt="" />
+              <img src="../Images/Brocoli-800.jpg" alt="" />
+              <img src="../Images/Straight-fries-800.jpg" alt="" />
+              <img src="../Images/corn-800.jpg" alt="" />
+              <!-- Doubled -->
+              <img src="../Images/mixedVeggiesBag-800.jpg" alt="" />
+              <img src="../Images/Brocoli-800.jpg" alt="" />
+              <img src="../Images/Straight-fries-800.jpg" alt="" />
+              <img src="../Images/corn-800.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MARQUEE STRIP ─── -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- Set 1 -->
+        <span class="marquee-item">IQF Frozen Vegetables<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Premium French Fries<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Frozen Fruits<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Egyptian Quality<span class="marquee-dot"></span></span>
+        <span class="marquee-item">B2B Export<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Cold Chain Certified<span class="marquee-dot"></span></span>
+        <!-- Set 2 -->
+        <span class="marquee-item">IQF Frozen Vegetables<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Premium French Fries<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Frozen Fruits<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Egyptian Quality<span class="marquee-dot"></span></span>
+        <span class="marquee-item">B2B Export<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Cold Chain Certified<span class="marquee-dot"></span></span>
+        <!-- Set 3 -->
+        <span class="marquee-item">IQF Frozen Vegetables<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Premium French Fries<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Frozen Fruits<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Egyptian Quality<span class="marquee-dot"></span></span>
+        <span class="marquee-item">B2B Export<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Cold Chain Certified<span class="marquee-dot"></span></span>
+        <!-- Set 4 -->
+        <span class="marquee-item">IQF Frozen Vegetables<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Premium French Fries<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Frozen Fruits<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Egyptian Quality<span class="marquee-dot"></span></span>
+        <span class="marquee-item">B2B Export<span class="marquee-dot"></span></span>
+        <span class="marquee-item">Cold Chain Certified<span class="marquee-dot"></span></span>
+      </div>
+    </div>
+
+    <!-- ─── OUR STORY ─── -->
+    <section class="story">
+      <div class="story-inner">
+        <!-- Left: image -->
+        <div class="story-image-wrap reveal-left">
+          <img
+            src="../Images/z-image_00010_.png"
+            alt="TheGentlemen production facility"
+            class="story-image-main"
+          />
+          <div class="story-image-badge">
+            <strong>2023</strong>
+            Founded
+          </div>
+        </div>
+        <!-- Right: text -->
+        <div class="story-text">
+          <div class="story-num">01</div>
+          <p class="section-tag reveal">Our Story</p>
+          <h2 class="story-title reveal">From Egyptian Farms to Global Markets</h2>
+          <div class="gold-rule reveal"></div>
+          <div class="story-body reveal">
+            <p>
+              Founded in 2023, TheGentlemen for Export was built on a single conviction: Egypt's agricultural bounty deserves a premium platform on the world stage. We set out to bridge Egyptian farms with international buyers who demand consistency, quality, and reliability.
+            </p>
+            <p>
+              Today we ship IQF-processed frozen vegetables, fruits, and French fries to buyers in the UK, Kuwait, UAE, Saudi Arabia and beyond — with every shipment backed by cold-chain integrity and export-grade certification.
+            </p>
+            <p>
+              Our mission is to make Egyptian frozen produce the preferred choice for B2B buyers worldwide — delivering not just a product, but a partnership built on trust.
+            </p>
+          </div>
+          <div class="gold-rule reveal"></div>
+          <a href="about.html" class="text-link reveal">
+            Learn More About Us
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURED PRODUCTS ─── -->
+    <section class="products">
+      <div class="products-inner">
+        <div class="products-header">
+          <div>
+            <p class="section-tag light reveal">What We Export</p>
+            <h2 class="section-title light reveal">Our Featured Products</h2>
+          </div>
+        </div>
+
+        <div class="products-grid">
+          <!-- Card 1 -->
+          <article class="product-card reveal reveal-delay-1">
+            <img
+              src="../Images/fries-800.jpg"
+              alt="Premium French Fries"
+              class="product-card-img"
+            />
+            <div class="product-card-body">
+              <div class="product-card-num">01 / 03</div>
+              <h3 class="product-card-name">Premium French Fries</h3>
+              <p class="product-card-desc">
+                Export-grade IQF French fries — consistent cut, available in multiple sizes for foodservice and retail buyers.
+              </p>
+              <div class="product-card-rule"></div>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="product-card reveal reveal-delay-2">
+            <img
+              src="../Images/mixed-veggies-800.jpg"
+              alt="Frozen Vegetables"
+              class="product-card-img"
+            />
+            <div class="product-card-body">
+              <div class="product-card-num">02 / 03</div>
+              <h3 class="product-card-name">Frozen Vegetables</h3>
+              <p class="product-card-desc">
+                IQF-processed within hours of harvest — broccoli, carrots, beans, corn and more, preserving peak nutrition and colour.
+              </p>
+              <div class="product-card-rule"></div>
+            </div>
+          </article>
+          <!-- Card 3 -->
+          <article class="product-card reveal reveal-delay-3">
+            <img
+              src="../Images/mango-800.jpg"
+              alt="Frozen Fruits"
+              class="product-card-img"
+            />
+            <div class="product-card-body">
+              <div class="product-card-num">03 / 03</div>
+              <h3 class="product-card-name">Frozen Fruits</h3>
+              <p class="product-card-desc">
+                Naturally sweet Egyptian mangoes, strawberries, and mixed fruits — IQF preserved at peak ripeness for global buyers.
+              </p>
+              <div class="product-card-rule"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="products-footer reveal">
+          <a href="products.html" class="text-link" style="color:var(--gold);">
+            View All Products
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WHY THEGENTLEMEN ─── -->
+    <section class="why">
+      <div class="why-inner">
+        <div class="why-header">
+          <div>
+            <p class="section-tag reveal">Why Choose Us</p>
+            <h2 class="section-title dark reveal">The Standard Your<br>Business Deserves</h2>
+          </div>
+          <p class="why-intro reveal">
+            We combine Egyptian agricultural excellence with international export standards — giving B2B buyers a reliable, certified partner they can count on shipment after shipment.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <!-- Col 1 -->
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-card-num">01</div>
+            <div class="why-icon-wrap">
+              <i class="fas fa-certificate" aria-hidden="true"></i>
+            </div>
+            <h3 class="why-title">Quality Certified</h3>
+            <p class="why-desc">
+              Certified quality and efficient shipping solutions for every international order — from IQF processing to cold-chain delivery.
+            </p>
+            <div class="why-rule"></div>
+          </div>
+          <!-- Col 2 -->
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-card-num">02</div>
+            <div class="why-icon-wrap">
+              <i class="fas fa-globe" aria-hidden="true"></i>
+            </div>
+            <h3 class="why-title">Global Reach</h3>
+            <p class="why-desc">
+              Our team understands the nuances of international markets — UK, Kuwait, UAE, Saudi Arabia and expanding — to serve you better.
+            </p>
+            <div class="why-rule"></div>
+          </div>
+          <!-- Col 3 -->
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-card-num">03</div>
+            <div class="why-icon-wrap">
+              <i class="fas fa-handshake" aria-hidden="true"></i>
+            </div>
+            <h3 class="why-title">Trusted Partner</h3>
+            <p class="why-desc">
+              We prioritize your satisfaction with every shipment, building lasting B2B relationships founded on transparency and reliability.
+            </p>
+            <div class="why-rule"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA STRIP ─── -->
+    <section class="cta-strip">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Ready to Partner<br>With Us?</h2>
+        <p class="cta-subtitle">Contact our sales team to discuss your frozen food needs — we are ready to supply.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-dark">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            Contact Us
+          </a>
+          <a href="products.html" class="btn-outline-dark">
+            <i class="fas fa-box-open" aria-hidden="true"></i>
+            View Products
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-name">THE<span>GENTLEMEN</span></div>
+        <p class="footer-tagline">Exporting Quality From Egypt, Worldwide.</p>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>Cairo, Egypt</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          <span>+20 [Your Phone Number]</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>[Your Email Address]</span>
+        </div>
+      </div>
+      <!-- Connect -->
+      <div>
+        <h4 class="footer-col-title">Connect</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on X"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <span class="footer-preview-badge">Design Preview — Not Live</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ─── Header scroll class ─── */
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ─── Mobile nav toggle ─── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    const backdrop  = document.getElementById('nav-backdrop');
+
+    function openNav() {
+      mobileNav.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.contains('open') ? closeNav() : openNav();
+    });
+
+    backdrop.addEventListener('click', closeNav);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    /* ─── IntersectionObserver reveals ─── */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

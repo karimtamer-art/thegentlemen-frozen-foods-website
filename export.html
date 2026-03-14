@@ -35,23 +35,25 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile Nav -->
-  <div class="mobile-nav-overlay" id="nav-overlay"></div>
-  <nav class="mobile-nav-panel" id="mobile-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="export.html" class="active">Export</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-nav-backdrop" id="nav-backdrop"></div>
+    <div class="mobile-nav-panel">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="export.html" class="active">Export</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 
   <main>
 
@@ -75,7 +77,7 @@
           freshness, sustainability, and reliability in every shipment.
         </p>
         <div class="hero-ctas">
-          <a href="contact.html" class="btn-gold">Get Export Quote</a>
+          <a href="contact.html" class="btn-primary">Get Export Quote</a>
           <a href="products.html" class="btn-ghost-white">Our Products</a>
         </div>
       </div>
@@ -274,7 +276,7 @@
           Let our export experts guide you through the process — from product
           selection to cold-chain delivery at your destination port.
         </p>
-        <a href="contact.html" class="btn-dark">Contact Export Team</a>
+        <a href="contact.html" class="btn-secondary">Contact Export Team</a>
       </div>
     </section>
 
@@ -291,7 +293,7 @@
       </div>
       <div>
         <p class="footer-col-title">Quick Links</p>
-        <ul class="footer-links-list">
+        <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="products.html">Products</a></li>
@@ -307,7 +309,7 @@
       </div>
       <div>
         <p class="footer-col-title">Connect</p>
-        <div class="footer-socials">
+        <div class="footer-social">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -315,9 +317,9 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
-      <p>Design Preview — Not Live</p>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <span class="footer-preview-badge">Design Preview — Not Live</span>
     </div>
   </footer>
 
@@ -329,15 +331,33 @@
     }, { passive: true });
 
     // ── Mobile Nav ──
-    const hamburger  = document.getElementById('hamburger');
-    const mobileNav  = document.getElementById('mobile-nav');
-    const navOverlay = document.getElementById('nav-overlay');
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    const backdrop  = document.getElementById('nav-backdrop');
 
-    function openNav()  { mobileNav.classList.add('open'); navOverlay.classList.add('open'); }
-    function closeNav() { mobileNav.classList.remove('open'); navOverlay.classList.remove('open'); }
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
 
-    hamburger.addEventListener('click', openNav);
-    navOverlay.addEventListener('click', closeNav);
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    backdrop.addEventListener('click', closeNav);
+
+    mobileNav.querySelectorAll('.mobile-nav-list a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
+    });
 
     // ── IntersectionObserver: reveal animations ──
     const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');

@@ -1,12 +1,8 @@
 /* =============================================
-   DESIGN SYSTEM — TheGentlemen for Export
-   Aesthetic: Editorial Luxury · Navy + Gold
-============================================= */
-
-/* =============================================
    1. Variables & Base Reset
 ============================================= */
 :root {
+  /* ── Brand colours ── */
   --navy:      #0A1628;
   --navy-mid:  #112240;
   --navy-soft: #1a3358;
@@ -18,11 +14,51 @@
   --white:     #FFFFFF;
   --text:      #2a2a2a;
   --text-muted:#6b7280;
+
+  /* ── Typography ── */
   --ff-display: 'Playfair Display', Georgia, serif;
   --ff-body:    'DM Sans', system-ui, sans-serif;
-  /* contact.html also uses: */
+
+  /* ── Layout ── */
   --header-h:   76px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Colour transparencies (used throughout) ── */
+  --navy-05:  rgba(10,22,40,0.05);
+  --navy-08:  rgba(10,22,40,0.08);
+  --navy-12:  rgba(10,22,40,0.12);
+  --navy-15:  rgba(10,22,40,0.15);
+  --navy-20:  rgba(10,22,40,0.20);
+  --gold-05:  rgba(201,168,76,0.05);
+  --gold-10:  rgba(201,168,76,0.10);
+  --gold-12:  rgba(201,168,76,0.12);
+  --gold-20:  rgba(201,168,76,0.20);
+  --gold-25:  rgba(201,168,76,0.25);
+  --gold-30:  rgba(201,168,76,0.30);
+  --gold-35:  rgba(201,168,76,0.35);
+  --white-05: rgba(255,255,255,0.05);
+  --white-10: rgba(255,255,255,0.10);
+  --white-25: rgba(255,255,255,0.25);
+  --white-45: rgba(255,255,255,0.45);
+  --white-75: rgba(255,255,255,0.75);
+
+  /* ── Shadow scale ── */
+  --shadow-sm:  0 4px 12px rgba(0,0,0,0.06);
+  --shadow-md:  0 8px 24px rgba(0,0,0,0.10);
+  --shadow-lg:  0 16px 48px rgba(0,0,0,0.14);
+  --shadow-xl:  0 24px 64px rgba(0,0,0,0.18);
+
+  /* ── Spacing scale ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10:120px;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -153,20 +189,21 @@ body::after {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 16px 32px;
+  padding: 16px 36px;
   border-radius: 2px;
-  transition: background 0.25s ease, transform 0.2s ease;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary:hover {
   background: var(--gold-light);
   transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--gold-25);
 }
 
 .btn-primary i { font-size: 0.75rem; }
 
-/* Dark — navy fill */
-.btn-dark {
+/* Secondary — navy fill */
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -180,17 +217,42 @@ body::after {
   text-decoration: none;
   padding: 16px 36px;
   border-radius: 2px;
-  display: inline-block;
-  transition: background 0.25s ease, transform 0.3s, box-shadow 0.3s;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
-.btn-dark:hover {
+.btn-secondary:hover {
   background: var(--navy-soft);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(10,22,40,0.25);
+  box-shadow: 0 8px 24px var(--navy-20);
 }
 
-/* Ghost — transparent with bottom border (index hero) */
+.btn-secondary i { font-size: 0.75rem; }
+
+/* Outline — transparent with border (light backgrounds) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 2px;
+  border: 2px solid rgba(10,22,40,0.3);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--navy);
+  background: var(--navy-08);
+}
+
+/* Ghost — bottom-border underline (dark backgrounds) */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -212,126 +274,32 @@ body::after {
   border-color: var(--gold);
 }
 
-/* Ghost — transparent with full border (about CTA) — overridden in section 12 */
-.btn-ghost-border {
-  background: transparent;
-  color: var(--navy);
-  border: 2px solid rgba(10,22,40,0.3);
-  padding: 14px 40px;
-  font-family: var(--ff-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-.btn-ghost-border:hover {
-  border-color: var(--navy);
-  background: rgba(10,22,40,0.08);
-}
-
-/* Display inline-flex for ghost-border */
-.btn-ghost-border {
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Outline dark (index CTA) */
-.btn-outline-dark {
+/* Ghost white — outlined border (dark backgrounds) */
+.btn-ghost-white {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: transparent;
-  color: var(--navy);
-  font-family: var(--ff-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 36px;
-  border-radius: 2px;
-  border: 2px solid rgba(10,22,40,0.35);
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.btn-outline-dark:hover {
-  border-color: var(--navy);
-  background: rgba(10,22,40,0.08);
-}
-
-/* Gold fill — export hero */
-.btn-gold {
-  background: var(--gold);
-  color: var(--navy);
-  padding: 16px 40px;
-  font-family: var(--ff-body);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-.btn-gold:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(201,168,76,0.35);
-}
-
-/* Ghost white — export hero */
-.btn-ghost-white {
-  background: transparent;
   color: var(--white);
-  border: 2px solid rgba(255,255,255,0.4);
-  padding: 14px 40px;
   font-family: var(--ff-body);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
+  padding: 14px 40px;
   border-radius: 2px;
-  transition: all 0.3s;
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
 }
 
 .btn-ghost-white:hover {
   border-color: var(--white);
-  background: rgba(255,255,255,0.1);
+  background: var(--white-10);
   transform: translateY(-2px);
 }
 
-/* Navy — products CTA */
-.btn-navy {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--ff-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 18px 44px;
-  background: var(--navy);
-  color: var(--white);
-  border-radius: 2px;
-  transition: background 0.25s, transform 0.25s;
-}
-
-.btn-navy:hover {
-  background: #060f1c;
-  transform: translateY(-2px);
-}
-
-.btn-navy i { font-size: 0.75rem; }
-
-/* Contact submit */
+/* Contact form submit */
 .btn-submit {
   display: block;
   width: 100%;
@@ -351,7 +319,7 @@ body::after {
 
 .btn-submit:hover {
   background: var(--gold-light);
-  box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+  box-shadow: 0 8px 32px var(--gold-35);
   transform: translateY(-1px);
 }
 
@@ -379,28 +347,6 @@ body::after {
   background: var(--gold);
 }
 
-/* Export section-tag standalone class variant (alias) */
-.export-section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--ff-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
-.export-section-tag::before,
-.export-section-tag::after {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--gold);
-}
 
 /* =============================================
    6. Header & Navigation
@@ -419,6 +365,10 @@ body::after {
   background: rgba(10, 22, 40, 0.95);
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+}
+
+#page-contact .header.scrolled {
+  box-shadow: none;
 }
 
 .header-inner {
@@ -443,17 +393,6 @@ body::after {
 
 .logo-link span { color: var(--gold); }
 
-/* Logo — contact page */
-.logo-wordmark {
-  font-family: var(--ff-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.12em;
-  color: var(--white);
-  user-select: none;
-}
-
-.logo-wordmark .logo-gold { color: var(--gold); }
 
 /* Desktop nav — index/about/export */
 .nav-list {
@@ -484,34 +423,6 @@ body::after {
   border-bottom: 1px solid var(--gold);
 }
 
-/* Desktop nav — contact page (.nav-desktop wraps .nav-list) */
-.nav-desktop .nav-list {
-  gap: 6px;
-}
-
-.nav-desktop .nav-list a {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.82);
-  padding: 8px 18px;
-  border-radius: 50px;
-  border: 1px solid transparent;
-  letter-spacing: 0.03em;
-  transition: color var(--transition), background var(--transition), border-color var(--transition);
-}
-
-.nav-desktop .nav-list a:hover {
-  color: var(--white);
-  background: rgba(201,168,76,0.12);
-  border-color: rgba(201,168,76,0.25);
-}
-
-.nav-desktop .nav-list a.active {
-  color: var(--navy);
-  background: var(--gold);
-  border-color: var(--gold);
-  font-weight: 600;
-  border-bottom: none;
-}
 
 /* =============================================
    7. Mobile Navigation
@@ -543,53 +454,7 @@ body::after {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Pattern A: slide-in side panel (index, about, export) ── */
-.mobile-nav-panel {
-  position: fixed;
-  top: 0; right: -100%;
-  width: 280px;
-  height: 100vh;
-  background: var(--navy-mid);
-  z-index: 2000;
-  padding: 80px 40px 40px;
-  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  border-left: 1px solid rgba(201,168,76,0.15);
-}
-
-.mobile-nav-panel.open { right: 0; }
-
-.mobile-nav-panel ul { list-style: none; }
-
-.mobile-nav-panel ul li {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.mobile-nav-panel ul li a {
-  display: block;
-  padding: 18px 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.mobile-nav-panel ul li a:hover,
-.mobile-nav-panel ul li a.active { color: var(--gold); }
-
-.mobile-nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 1999;
-}
-
-.mobile-nav-overlay.open { display: block; }
-
-/* ── Index page: full-screen wrapper with backdrop (div.mobile-nav) ── */
+/* ── Full-screen wrapper with backdrop — all pages ── */
 div.mobile-nav {
   display: none;
   position: fixed;
@@ -644,9 +509,6 @@ div.mobile-nav.open .mobile-nav-panel {
 
 .mobile-nav-list a:hover,
 .mobile-nav-list a.active { color: var(--gold); }
-
-/* ── About/Export: .mobile-nav-panel as standalone side panel ── */
-/* (about and export pages use .mobile-nav-panel + .mobile-nav-overlay separately) */
 
 /* =============================================
    8. Footer
@@ -728,21 +590,7 @@ div.mobile-nav.open .mobile-nav-panel {
 
 .footer-links a:hover { color: var(--gold); }
 
-/* About/Export — .footer-links-list */
-.footer-links-list { list-style: none; }
-
-.footer-links-list li { margin-bottom: 12px; }
-
-.footer-links-list a {
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-
-.footer-links-list a:hover { color: var(--white); }
-
-/* Contact items */
+/* Contact items — shared across all pages */
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
@@ -766,7 +614,7 @@ div.mobile-nav.open .mobile-nav-panel {
   line-height: 1.6;
 }
 
-/* Social icons — index (.footer-social) */
+/* Social icons — shared across all pages */
 .footer-social {
   display: flex;
   gap: 12px;
@@ -784,94 +632,16 @@ div.mobile-nav.open .mobile-nav-panel {
   color: rgba(255,255,255,0.5);
   font-size: 0.8rem;
   text-decoration: none;
-  transition: all 0.25s;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
 }
 
 .footer-social a:hover {
   border-color: var(--gold);
   color: var(--gold);
+  background: var(--gold-10);
 }
 
-/* Social icons — about/export (.footer-socials) */
-.footer-socials {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-}
-
-.footer-socials a {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.8rem;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.footer-socials a:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-/* Social icons — products (.social-icons) */
-.social-icons {
-  display: flex;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.social-icons a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.5);
-  font-size: 0.78rem;
-  text-decoration: none;
-  transition: border-color 0.25s, color 0.25s, background 0.25s;
-}
-
-.social-icons a:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: rgba(201,168,76,0.08);
-}
-
-/* Social icons — contact (.footer-social-icons) */
-.footer-social-icons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.footer-social-icons a {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.55);
-  font-size: 0.78rem;
-  transition: color var(--transition), border-color var(--transition), background var(--transition);
-}
-
-.footer-social-icons a:hover {
-  color: var(--gold);
-  border-color: var(--gold);
-  background: rgba(201,168,76,0.08);
-}
-
-/* Footer bottom row */
+/* Footer bottom row — shared across all pages */
 .footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
@@ -882,13 +652,12 @@ div.mobile-nav.open .mobile-nav-panel {
   gap: 16px;
 }
 
-/* Index copyright */
 .footer-copy {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.3);
 }
 
-/* Index badge */
+/* Preview badge — shared */
 .footer-preview-badge {
   font-size: 0.7rem;
   font-weight: 600;
@@ -898,119 +667,6 @@ div.mobile-nav.open .mobile-nav-panel {
   border: 1px solid rgba(201,168,76,0.2);
   padding: 5px 12px;
   border-radius: 2px;
-}
-
-/* About/Export copyright row */
-.footer-copyright {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 24px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-copyright p {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.25);
-}
-
-/* Products copyright text */
-.footer-copyright-text {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.3);
-}
-
-/* Products badge */
-.footer-badge {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.5);
-  padding: 6px 14px;
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 100px;
-}
-
-/* Contact footer column styles */
-.footer-brand .brand-name {
-  font-family: var(--ff-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
-}
-
-.footer-brand .brand-name span { color: var(--gold); }
-
-.footer-brand p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.6;
-  margin-top: 12px;
-  max-width: 240px;
-}
-
-.footer-col h4 {
-  font-family: var(--ff-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
-.footer-col ul li { margin-bottom: 10px; }
-
-.footer-col ul a {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
-  transition: color var(--transition);
-}
-
-.footer-col ul a:hover { color: var(--gold); }
-
-.footer-contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-contact-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.5;
-}
-
-.footer-contact-list li i {
-  color: var(--gold);
-  font-size: 0.8rem;
-  margin-top: 3px;
-  flex-shrink: 0;
-}
-
-/* Contact page footer bottom */
-.footer-bottom p {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
-}
-
-.footer-bottom .preview-badge {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.25);
-  padding: 4px 12px;
-  border-radius: 50px;
 }
 
 /* =============================================
@@ -1732,31 +1388,6 @@ div.mobile-nav.open .mobile-nav-panel {
   background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
 }
 
-/* About page .btn-ghost: full-border variant (overrides shared bottom-border-only) */
-.cta-buttons .btn-ghost {
-  background: transparent;
-  color: var(--navy);
-  border: 2px solid rgba(10,22,40,0.3);
-  padding: 14px 40px;
-  font-family: var(--ff-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cta-buttons .btn-ghost:hover {
-  border-color: var(--navy);
-  background: rgba(10,22,40,0.08);
-  color: var(--navy);
-  border-bottom: 2px solid rgba(10,22,40,0.3);
-}
 
 /* Stats Strip */
 .stats-strip {
@@ -2325,30 +1956,6 @@ div.mobile-nav.open .mobile-nav-panel {
   margin-bottom: 20px;
 }
 
-/* Products page .btn-primary is NAVY fill */
-#page-products .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--ff-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 16px 36px;
-  background: var(--navy);
-  color: var(--white);
-  border-radius: 2px;
-  transition: background 0.25s, transform 0.25s;
-}
-
-#page-products .btn-primary:hover {
-  background: var(--navy-soft);
-  transform: translateY(-2px);
-}
-
-#page-products .btn-primary i { font-size: 0.75rem; }
 
 /* Products page mobile nav: fullscreen centered with direct <a> children */
 #page-products .mobile-nav {
@@ -4010,7 +3617,6 @@ div.mobile-nav.open .mobile-nav-panel {
   :root { --header-h: 64px; }
 
   .header-inner { padding: 0 24px; }
-  .nav-desktop { display: none; }
   .hamburger { display: flex; }
   #page-contact .mobile-nav { display: none; /* shown via JS .open class */ }
 

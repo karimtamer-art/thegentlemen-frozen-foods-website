@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — TheGentlemen for Export</title>
+  <meta name="description" content="Learn about TheGentlemen for Export — an Egyptian frozen food exporter founded in 2023, delivering premium IQF vegetables, fruits, and French fries to global B2B markets." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
+
+  <style>
+    /* =============================================
+       DESIGN PREVIEW — TheGentlemen About Page
+       Aesthetic: Editorial Luxury · Dark Navy + Gold
+    ============================================= */
+
+    :root {
+      --navy:      #0A1628;
+      --navy-mid:  #112240;
+      --navy-soft: #1a3358;
+      --gold:      #C9A84C;
+      --gold-light:#E8C96A;
+      --gold-pale: #f5e9c8;
+      --cream:     #F7F3ED;
+      --green:     #2D7D46;
+      --white:     #FFFFFF;
+      --text:      #2a2a2a;
+      --text-muted:#6b7280;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body:    'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── Noise Texture Overlay ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* =============================================
+       HEADER / NAV
+    ============================================= */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 40px;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo-link {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .logo-link span { color: var(--gold); }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav-list a {
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 2px;
+      transition: color 0.2s;
+    }
+
+    .nav-list a:hover,
+    .nav-list a.active {
+      color: var(--gold);
+    }
+
+    .nav-list a.active {
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    /* =============================================
+       HERO — SPLIT PANEL
+    ============================================= */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: grid;
+      grid-template-columns: 52% 48%;
+      overflow: hidden;
+    }
+
+    /* LEFT — text panel */
+    .hero-left {
+      background: var(--navy);
+      display: flex;
+      align-items: flex-end;
+      padding: 80px 64px 80px 80px;
+      position: relative;
+      z-index: 2;
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    }
+
+    .hero-left-inner { max-width: 560px; }
+
+    .hero-label {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      max-width: 420px;
+      margin-bottom: 48px;
+    }
+
+    .hero-scroll {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-scroll-line::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* RIGHT — image panel */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.05);
+      transition: transform 8s ease;
+    }
+
+    .hero-right:hover img { transform: scale(1.0); }
+
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
+    }
+
+    /* Year badge */
+    .hero-year {
+      position: absolute;
+      bottom: 48px;
+      right: 48px;
+      z-index: 3;
+      text-align: right;
+    }
+
+    .hero-year-num {
+      font-family: var(--ff-display);
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      opacity: 0.9;
+    }
+
+    .hero-year-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* =============================================
+       STATS STRIP
+    ============================================= */
+    .stats-strip {
+      background: var(--gold);
+      padding: 0;
+    }
+
+    .stats-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-x: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .stat-item {
+      padding: 40px 48px;
+      border-right: 1px solid rgba(10,22,40,0.15);
+      position: relative;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(10,22,40,0.65);
+    }
+
+    /* =============================================
+       STORY SECTION
+    ============================================= */
+    .story {
+      background: var(--cream);
+      padding: 120px 80px;
+    }
+
+    .story-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .story-image-wrap {
+      position: relative;
+    }
+
+    .story-image-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .story-image-accent {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 55%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 6px solid var(--cream);
+      border-radius: 2px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .story-num {
+      font-family: var(--ff-display);
+      font-size: 8rem;
+      font-weight: 900;
+      color: rgba(10,22,40,0.06);
+      line-height: 1;
+      margin-bottom: -30px;
+      user-select: none;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .story-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .story-title em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .story-body p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .story-body p:last-child { margin-bottom: 0; }
+
+    .gold-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 36px 0;
+    }
+
+    /* =============================================
+       PRINCIPLES — EDITORIAL CARDS
+    ============================================= */
+    .principles {
+      background: var(--navy);
+      padding: 120px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .principles::before {
+      content: 'VALUES';
+      position: absolute;
+      top: 60px;
+      right: -20px;
+      font-family: var(--ff-display);
+      font-size: 10rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .principles-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .principles-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 80px;
+    }
+
+    .principles-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 500px;
+    }
+
+    .principles-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .principles-desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 320px;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .principle-card {
+      background: var(--navy-mid);
+      padding: 56px 44px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.4s ease;
+      cursor: default;
+    }
+
+    .principle-card:hover { background: var(--navy-soft); }
+
+    .principle-card::before {
+      content: attr(data-num);
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      font-family: var(--ff-display);
+      font-size: 6rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+      transition: color 0.4s;
+    }
+
+    .principle-card:hover::before {
+      color: rgba(201,168,76,0.07);
+    }
+
+    .principle-icon {
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      color: var(--gold);
+      font-size: 1.1rem;
+      transition: all 0.4s;
+    }
+
+    .principle-card:hover .principle-icon {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .principle-name {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .principle-text {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .principle-rule {
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      margin-top: 32px;
+      transition: width 0.4s ease;
+    }
+
+    .principle-card:hover .principle-rule { width: 64px; }
+
+    /* =============================================
+       PHILOSOPHY STRIP — FULL WIDTH QUOTE
+    ============================================= */
+    .philosophy {
+      background: var(--cream);
+      padding: 100px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy::before,
+    .philosophy::after {
+      content: '"';
+      font-family: var(--ff-display);
+      font-size: 24rem;
+      color: rgba(10,22,40,0.04);
+      position: absolute;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .philosophy::before { top: -60px; left: 40px; }
+    .philosophy::after  { bottom: -120px; right: 40px; }
+
+    .philosophy-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .philosophy-quote {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 40px;
+    }
+
+    .philosophy-quote strong { color: var(--green); font-style: normal; }
+
+    .philosophy-attr {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .philosophy-attr::before {
+      content: '— ';
+      color: var(--gold);
+    }
+
+    /* =============================================
+       ORIGIN SECTION — FROM EGYPT
+    ============================================= */
+    .origin {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .origin-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .origin-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+        rgba(10,22,40,0.92) 0%,
+        rgba(10,22,40,0.70) 50%,
+        rgba(10,22,40,0.40) 100%
+      );
+    }
+
+    .origin-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px 80px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .origin-left {}
+
+    .origin-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 24px;
+    }
+
+    .origin-title span { color: var(--gold); }
+
+    .origin-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 40px;
+    }
+
+    .origin-markets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .market-chip {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold-light);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      backdrop-filter: blur(4px);
+    }
+
+    .origin-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .origin-img-wrap {
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .origin-img-wrap:first-child {
+      grid-row: span 2;
+    }
+
+    .origin-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .origin-img-wrap:hover img { transform: scale(1.05); }
+
+    /* =============================================
+       CTA SECTION
+    ============================================= */
+    .cta-section {
+      background: var(--gold);
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cta-sub {
+      font-size: 1rem;
+      color: rgba(10,22,40,0.65);
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 40px;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .btn-dark:hover {
+      background: var(--navy-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(10,22,40,0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid rgba(10,22,40,0.3);
+      padding: 14px 40px;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--navy);
+      background: rgba(10,22,40,0.08);
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 80px 0;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand-tagline {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+    }
+
+    .footer-links-list li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links-list a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links-list a:hover { color: var(--white); }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.875rem;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .footer-contact-item i {
+      color: var(--gold);
+      margin-top: 3px;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .footer-socials a {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .footer-socials a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .footer-copyright {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copyright p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* =============================================
+       REVEAL ANIMATIONS
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .delay-100 { transition-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; }
+    .delay-400 { transition-delay: 0.4s; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 55% 45%; }
+      .hero-left { padding: 80px 48px 80px 48px; }
+      .story { padding: 100px 48px; }
+      .story-inner { gap: 60px; }
+      .principles { padding: 100px 48px; }
+      .origin-inner { padding: 80px 48px; }
+      .cta-section { padding: 80px 48px; }
+      .footer { padding: 60px 48px 0; }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; height: auto; min-height: 100vh; }
+      .hero-left {
+        clip-path: none;
+        padding: 120px 40px 60px;
+        min-height: 65vh;
+        align-items: center;
+      }
+      .hero-right { height: 40vh; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .story-inner { grid-template-columns: 1fr; gap: 60px; }
+      .story-image-accent { display: none; }
+      .principles-grid { grid-template-columns: 1fr; gap: 2px; }
+      .principles-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .principles-desc { text-align: left; }
+      .origin-inner { grid-template-columns: 1fr; gap: 40px; }
+      .origin-right { display: none; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-left { padding: 100px 24px 48px; }
+      .story { padding: 80px 24px; }
+      .principles { padding: 80px 24px; }
+      .philosophy { padding: 80px 24px; }
+      .origin-inner { padding: 80px 24px; }
+      .cta-section { padding: 80px 24px; }
+      .footer { padding: 60px 24px 0; }
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .header { padding: 0 24px; }
+      .nav-list { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* Mobile Nav Panel */
+    .mobile-nav-panel {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: var(--navy-mid);
+      z-index: 2000;
+      padding: 80px 40px 40px;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border-left: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .mobile-nav-panel.open { right: 0; }
+
+    .mobile-nav-panel ul {
+      list-style: none;
+    }
+
+    .mobile-nav-panel ul li {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mobile-nav-panel ul li a {
+      display: block;
+      padding: 18px 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-nav-panel ul li a:hover,
+    .mobile-nav-panel ul li a.active { color: var(--gold); }
+
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1999;
+    }
+
+    .mobile-nav-overlay.open { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo-link">THE<span>GENTLEMEN</span></a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#" class="active">About</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../export.html">Export</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" id="nav-overlay"></div>
+  <nav class="mobile-nav-panel" id="mobile-nav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#" class="active">About</a></li>
+      <li><a href="../products.html">Products</a></li>
+      <li><a href="../export.html">Export</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-left-inner">
+          <p class="hero-label">Our Story</p>
+          <h1 class="hero-title">
+            Our Story,<br>
+            Your <em>Trust.</em>
+          </h1>
+          <p class="hero-subtitle">
+            Since 2023, we've built trusted partnerships with B2B buyers across
+            global markets — delivering premium Egyptian frozen food products
+            with consistency, care, and reliability.
+          </p>
+          <div class="hero-scroll">
+            <span class="hero-scroll-line"></span>
+            Scroll to explore
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              ../Images/responsive_images_optimized/opt_400.webp   400w,
+              ../Images/responsive_images_optimized/opt_750.webp   750w,
+              ../Images/responsive_images_optimized/opt_1080.webp 1080w,
+              ../Images/responsive_images_optimized/opt_1600.webp 1600w
+            "
+            sizes="50vw"
+          />
+          <img
+            src="../Images/about-hero.png"
+            srcset="
+              ../Images/responsive_images_optimized/opt_750.png  750w,
+              ../Images/responsive_images_optimized/opt_1920.png 1920w
+            "
+            sizes="50vw"
+            alt="TheGentlemen frozen food export facility"
+          />
+        </picture>
+        <div class="hero-year">
+          <div class="hero-year-num">2023</div>
+          <div class="hero-year-label">Founded</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STATS STRIP ══ -->
+    <div class="stats-strip">
+      <div class="stats-inner">
+        <div class="stat-item reveal delay-100">
+          <div class="stat-num">2023</div>
+          <div class="stat-label">Year Founded</div>
+        </div>
+        <div class="stat-item reveal delay-200">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Active Export Markets</div>
+        </div>
+        <div class="stat-item reveal delay-300">
+          <div class="stat-num">IQF</div>
+          <div class="stat-label">Processing Standard</div>
+        </div>
+        <div class="stat-item reveal delay-400">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Egyptian Origin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ STORY ══ -->
+    <section class="story">
+      <div class="story-inner">
+        <div class="story-image-wrap reveal-left">
+          <img
+            class="story-image-main"
+            src="../Images/z-image_00010_.png"
+            alt="TheGentlemen frozen food processing facility"
+            loading="lazy"
+          />
+          <img
+            class="story-image-accent"
+            src="../Images/mixed-veggies-800.jpg"
+            alt="Premium frozen vegetables"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal-right">
+          <div class="story-num">01</div>
+          <p class="section-tag">Who We Are</p>
+          <h2 class="story-title">
+            Your Global Partner in<br>
+            <em>Frozen Food Excellence</em>
+          </h2>
+          <div class="gold-rule"></div>
+          <div class="story-body">
+            <p>
+              Founded in 2023, TheGentlemen for Export has grown from an
+              ambitious Egyptian export startup into a trusted international
+              supplier of premium frozen food products. Our commitment to
+              quality, safety, and reliability has earned us the trust of
+              importers and distributors across multiple international markets.
+            </p>
+            <p>
+              We specialize in sourcing, processing, and exporting a wide range
+              of premium frozen foods — including French fries, vegetables, and
+              fruits — sourced from Egypt's finest agricultural regions. Our
+              cold-chain facilities ensure every product maintains peak
+              freshness, nutritional value, and taste.
+            </p>
+            <p>
+              Our rigorous quality control measures and export logistics
+              capabilities allow us to offer competitive pricing without
+              compromising on the premium standards that define TheGentlemen brand.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PRINCIPLES ══ -->
+    <section class="principles">
+      <div class="principles-inner">
+        <div class="principles-header">
+          <div class="reveal-left">
+            <p class="section-tag" style="color: var(--gold);">Core Principles</p>
+            <h2 class="principles-title">
+              The Foundation<br>
+              of <em>Everything</em><br>
+              We Do
+            </h2>
+          </div>
+          <p class="principles-desc reveal-right">
+            Three pillars that guide every decision,
+            every shipment, and every partnership
+            we build around the world.
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          <div class="principle-card reveal delay-100" data-num="01">
+            <div class="principle-icon"><i class="fas fa-bullseye"></i></div>
+            <h3 class="principle-name">Mission</h3>
+            <p class="principle-text">
+              To deliver premium quality frozen foods that bridge continents,
+              connecting producers with markets through innovation, reliability,
+              and exceptional service standards.
+            </p>
+            <div class="principle-rule"></div>
+          </div>
+          <div class="principle-card reveal delay-200" data-num="02">
+            <div class="principle-icon"><i class="fas fa-eye"></i></div>
+            <h3 class="principle-name">Vision</h3>
+            <p class="principle-text">
+              To redefine global frozen food distribution by 2030 through
+              sustainable practices, cutting-edge cold chain technology, and
+              pioneering product development that sets new industry benchmarks.
+            </p>
+            <div class="principle-rule"></div>
+          </div>
+          <div class="principle-card reveal delay-300" data-num="03">
+            <div class="principle-icon"><i class="fas fa-heart"></i></div>
+            <h3 class="principle-name">Values</h3>
+            <p class="principle-text">
+              Integrity in sourcing, excellence in quality, innovation in
+              solutions, responsibility in sustainability, and genuine
+              partnership in every business relationship we cultivate.
+            </p>
+            <div class="principle-rule"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PHILOSOPHY QUOTE ══ -->
+    <section class="philosophy">
+      <div class="philosophy-inner reveal">
+        <p class="philosophy-quote">
+          "We don't just export frozen food — we export
+          <strong>Egyptian agricultural excellence</strong>,
+          preserved at its peak and delivered with the trust
+          that only a true partner can provide."
+        </p>
+        <p class="philosophy-attr">TheGentlemen for Export, Cairo 2023</p>
+      </div>
+    </section>
+
+    <!-- ══ ORIGIN — FROM EGYPT TO THE WORLD ══ -->
+    <section class="origin">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="
+            ../Images/hero-800.webp   800w,
+            ../Images/hero-1200.webp 1200w
+          "
+          sizes="100vw"
+        />
+        <img
+          class="origin-bg"
+          src="../Images/hero-1200.jpg"
+          alt="Egyptian agricultural landscape"
+          loading="lazy"
+        />
+      </picture>
+      <div class="origin-overlay"></div>
+      <div class="origin-inner">
+        <div class="origin-left reveal-left">
+          <p class="section-tag">Our Reach</p>
+          <h2 class="origin-title">
+            From <span>Egypt</span><br>
+            To The World
+          </h2>
+          <p class="origin-body">
+            Rooted in Egypt's fertile lands, our products travel thousands of
+            miles to reach the tables and kitchens of our global partners.
+            We currently ship to four international markets and continue
+            to expand our footprint.
+          </p>
+          <div class="origin-markets">
+            <span class="market-chip">🇬🇧 United Kingdom</span>
+            <span class="market-chip">🇰🇼 Kuwait</span>
+            <span class="market-chip">🇦🇪 UAE</span>
+            <span class="market-chip">🇸🇦 Saudi Arabia</span>
+          </div>
+        </div>
+        <div class="origin-right reveal-right">
+          <div class="origin-img-wrap">
+            <img src="../Images/fries-800.jpg" alt="Premium French fries export" loading="lazy" />
+          </div>
+          <div class="origin-img-wrap">
+            <img src="../Images/Brocoli-800.jpg" alt="Frozen broccoli" loading="lazy" />
+          </div>
+          <div class="origin-img-wrap">
+            <img src="../Images/strawberries-800.jpg" alt="Frozen strawberries" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Ready to Partner With Us?</h2>
+        <p class="cta-sub">
+          Whether you're an importer, distributor, or retailer — we'd love
+          to discuss how TheGentlemen can become your trusted frozen food supplier.
+        </p>
+        <div class="cta-buttons">
+          <a href="../contact.html" class="btn-dark">Get In Touch</a>
+          <a href="../products.html" class="btn-ghost">Explore Products</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3 class="footer-brand-name">TheGentlemen<br>for Export</h3>
+        <p class="footer-brand-tagline">
+          Exporting Quality From Egypt, Worldwide
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-title">Quick Links</p>
+        <ul class="footer-links-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../export.html">Export</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i> +20 [Your Phone Number]</div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i> [Your Email Address]</div>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <p>Design Preview — Not Live</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Header: add .scrolled class after 20px ──
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // ── Mobile Nav ──
+    const hamburger   = document.getElementById('hamburger');
+    const mobileNav   = document.getElementById('mobile-nav');
+    const navOverlay  = document.getElementById('nav-overlay');
+
+    function openNav()  { mobileNav.classList.add('open'); navOverlay.classList.add('open'); }
+    function closeNav() { mobileNav.classList.remove('open'); navOverlay.classList.remove('open'); }
+
+    hamburger.addEventListener('click', openNav);
+    navOverlay.addEventListener('click', closeNav);
+
+    // ── IntersectionObserver: reveal animations ──
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => io.observe(el));
+
+    // ── Stats counter animation ──
+    const statNums = document.querySelectorAll('.stat-num');
+
+    const counterIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const raw = el.textContent.trim();
+        const num = parseFloat(raw);
+        if (isNaN(num)) { counterIo.unobserve(el); return; }
+
+        const suffix = raw.replace(String(num), '');
+        const duration = 1200;
+        const steps = 50;
+        const increment = num / steps;
+        let current = 0;
+        let count = 0;
+
+        const tick = () => {
+          count++;
+          current = count >= steps ? num : current + increment;
+          el.textContent = (Number.isInteger(num)
+            ? Math.round(current)
+            : current.toFixed(1)) + suffix;
+          if (count < steps) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+        counterIo.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    statNums.forEach(el => counterIo.observe(el));
+  </script>
+</body>
+</html>

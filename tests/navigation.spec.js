@@ -30,7 +30,7 @@ test.describe("Navigation", () => {
     // Mobile menu is hidden on desktop (by design) and visible on mobile
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/");
-    await expect(page.locator(".mobile-menu")).toBeVisible();
+    await expect(page.locator(".hamburger")).toBeVisible();
   });
 });
 

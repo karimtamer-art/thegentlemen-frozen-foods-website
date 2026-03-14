@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — TheGentlemen for Export</title>
+  <meta name="description" content="Get in touch with TheGentlemen for Export. Submit a B2B inquiry for frozen vegetables, fruits, or French fries — our export team will respond promptly." />
+  <link rel="icon" href="data:," />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (async) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </noscript>
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --navy:       #0A1628;
+      --navy-mid:   #112240;
+      --navy-soft:  #1a3358;
+      --gold:       #C9A84C;
+      --gold-light: #E8C96A;
+      --gold-pale:  #f5e9c8;
+      --cream:      #F7F3ED;
+      --green:      #2D7D46;
+      --white:      #FFFFFF;
+      --text:       #2a2a2a;
+      --text-muted: #6b7280;
+      --ff-display: 'Playfair Display', Georgia, serif;
+      --ff-body:    'DM Sans', system-ui, sans-serif;
+      --header-h:   76px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================================
+       RESET / BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      background: transparent;
+      transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+    }
+
+    .header.scrolled {
+      background: rgba(10, 22, 40, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 32px rgba(0,0,0,0.35);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .logo-wordmark {
+      font-family: var(--ff-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      user-select: none;
+    }
+    .logo-wordmark .logo-gold { color: var(--gold); }
+
+    /* Nav */
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-list a {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.82);
+      padding: 8px 18px;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      letter-spacing: 0.03em;
+      transition: color var(--transition), background var(--transition), border-color var(--transition);
+    }
+
+    .nav-list a:hover {
+      color: var(--white);
+      background: rgba(201,168,76,0.12);
+      border-color: rgba(201,168,76,0.25);
+    }
+
+    .nav-list a.active {
+      color: var(--navy);
+      background: var(--gold);
+      border-color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+      z-index: 1100;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav panel */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      width: 100%;
+      background: rgba(10,22,40,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 32px 40px 40px;
+      z-index: 999;
+      transform: translateY(-8px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .mobile-nav.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .mobile-nav ul {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-nav a {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: color var(--transition);
+    }
+    .mobile-nav a:hover,
+    .mobile-nav a.active { color: var(--gold); }
+
+    /* ============================================================
+       SPLIT CONTACT HERO
+    ============================================================ */
+    .contact-split {
+      display: flex;
+      min-height: 100vh;
+      padding-top: var(--header-h);
+    }
+
+    /* ---------- LEFT PANEL ---------- */
+    .split-left {
+      position: relative;
+      width: 45%;
+      flex-shrink: 0;
+      background: var(--navy);
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Huge faded background word */
+    .split-left::after {
+      content: 'CONTACT';
+      position: absolute;
+      bottom: -10px;
+      right: -20px;
+      font-family: var(--ff-display);
+      font-weight: 700;
+      font-size: clamp(5rem, 10vw, 9rem);
+      color: var(--white);
+      opacity: 0.03;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    /* Gold tag */
+    .contact-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .contact-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* Headline */
+    .contact-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 32px;
+    }
+    .contact-headline em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* Gold rule */
+    .gold-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 48px;
+      border: none;
+    }
+
+    /* Contact info list */
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-bottom: 52px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .contact-info-item:hover .info-icon {
+      background: rgba(201,168,76,0.18);
+      border-color: rgba(201,168,76,0.5);
+    }
+
+    .info-text {
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+      padding-top: 10px;
+    }
+
+    /* Social icons */
+    .contact-social {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+    .social-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- RIGHT PANEL ---------- */
+    .split-right {
+      flex: 1;
+      background: var(--cream);
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .form-heading {
+      font-family: var(--ff-display);
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 40px;
+      line-height: 1.25;
+    }
+
+    /* Form layout */
+    .contact-form {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+    }
+
+    .form-group {
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--ff-body);
+      font-size: 0.92rem;
+      color: var(--text);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(10,22,40,0.2);
+      border-radius: 0;
+      padding: 10px 0;
+      outline: none;
+      transition: border-color var(--transition);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 28px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(10,22,40,0.3);
+      font-size: 0.88rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-bottom: 2px solid var(--gold);
+    }
+
+    /* Focus animated underline */
+    .form-group::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .form-group:focus-within::after { width: 100%; }
+
+    /* Submit button */
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 18px 32px;
+      margin-top: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .btn-submit:hover {
+      background: var(--gold-light);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.99);
+      box-shadow: none;
+    }
+
+    /* ============================================================
+       INFO STRIP
+    ============================================================ */
+    .info-strip {
+      background: var(--cream);
+      border-top: 1px solid rgba(10,22,40,0.08);
+      padding: 72px 40px;
+    }
+
+    .info-strip-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(10,22,40,0.08);
+    }
+
+    .info-card {
+      background: var(--cream);
+      padding: 52px 44px;
+      text-align: center;
+      position: relative;
+    }
+
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .info-card .card-icon {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .info-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      font-family: var(--ff-body);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 72px 40px 0;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand .brand-name {
+      font-family: var(--ff-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .footer-brand .brand-name span { color: var(--gold); }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      margin-top: 12px;
+      max-width: 240px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    .footer-contact-list li i {
+      color: var(--gold);
+      font-size: 0.8rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-social-icons a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.78rem;
+      transition: color var(--transition), border-color var(--transition), background var(--transition);
+    }
+    .footer-social-icons a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-bottom .preview-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    /* ============================================================
+       REVEAL ANIMATIONS
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ============================================================
+       RESPONSIVE — TABLET
+    ============================================================ */
+    @media (max-width: 1100px) {
+      .split-left { padding: 60px; width: 48%; }
+      .split-right { padding: 60px; }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 60px;
+      }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE
+    ============================================================ */
+    @media (max-width: 768px) {
+      :root { --header-h: 64px; }
+
+      .header-inner { padding: 0 24px; }
+
+      /* Hide desktop nav, show hamburger */
+      .nav-desktop { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav { display: block; }
+
+      /* Stack the split panels */
+      .contact-split {
+        flex-direction: column;
+        min-height: auto;
+      }
+
+      .split-left {
+        width: 100%;
+        padding: 72px 28px 52px;
+        min-height: auto;
+      }
+
+      .split-left::after { font-size: 5rem; }
+
+      .contact-headline { font-size: 2.2rem; }
+
+      .contact-social { margin-top: 40px; }
+
+      .split-right {
+        padding: 52px 28px 64px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* Info strip */
+      .info-strip { padding: 52px 24px; }
+      .info-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 1px;
+      }
+      .info-card { padding: 40px 28px; }
+
+      /* Footer */
+      .footer { padding: 56px 24px 0; }
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .footer-brand { grid-column: auto; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 24px 0 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .split-left { padding: 64px 22px 44px; }
+      .contact-headline { font-size: 1.9rem; }
+      .split-right { padding: 44px 22px 56px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-wordmark" aria-label="TheGentlemen for Export — Home">
+        THE<span class="logo-gold">GENTLEMEN</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav panel -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="export.html">Export</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         CONTACT SPLIT HERO
+    ============================================================ -->
+    <section class="contact-split" aria-label="Contact information and inquiry form">
+
+      <!-- LEFT — Info panel -->
+      <div class="split-left">
+
+        <p class="contact-tag reveal">Get In Touch</p>
+
+        <h1 class="contact-headline reveal reveal-delay-1">
+          Let's Build<br>
+          <em>Something</em><br>
+          Together
+        </h1>
+
+        <hr class="gold-rule reveal reveal-delay-2" />
+
+        <ul class="contact-info-list reveal reveal-delay-2" aria-label="Contact details">
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="info-text">Cairo, Egypt</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+            <!-- TODO: Replace with real phone number -->
+            <span class="info-text">+20 [Your Phone Number]</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+            <!-- TODO: Replace with real email address -->
+            <span class="info-text">[Your Email Address]</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-globe"></i></span>
+            <span class="info-text">Serving: UK, Kuwait, UAE, Saudi Arabia &amp; more</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="info-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+            <span class="info-text">Response within 1–2 business days</span>
+          </li>
+        </ul>
+
+        <div class="contact-social reveal reveal-delay-3" aria-label="Social media links">
+          <!-- TODO: Replace href="#" with real social profile URLs -->
+          <a href="#" class="social-btn" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+      </div><!-- /split-left -->
+
+      <!-- RIGHT — Form panel -->
+      <div class="split-right">
+
+        <p class="form-eyebrow reveal">B2B Export Inquiry</p>
+        <h2 class="form-heading reveal reveal-delay-1">Send Us a Message</h2>
+
+        <!--
+          FORMSPREE SETUP:
+          1. Sign up at https://formspree.io
+          2. Create a new form, copy your endpoint URL
+          3. Replace "YOUR_FORM_ID" below with your real form ID
+        -->
+        <form
+          class="contact-form reveal reveal-delay-2"
+          id="contactForm"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+        >
+          <!-- Formspree hidden fields -->
+          <input type="hidden" name="_next" value="contact.html?sent=1" />
+          <input type="hidden" name="_subject" value="New B2B Inquiry — TheGentlemen Website" />
+          <!-- Honeypot spam protection -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+                autocomplete="name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@company.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 (555) 000-0000"
+                autocomplete="tel"
+              />
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organisation</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company name"
+                autocomplete="organization"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inquiry">Purpose of Inquiry</label>
+            <select id="inquiry" name="inquiry">
+              <option value="" disabled selected>Select a purpose…</option>
+              <option value="distributor">Become a Distributor</option>
+              <option value="product">Product Inquiry</option>
+              <option value="partnership">Business Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us about your requirements — product type, quantity, destination market…"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Inquiry</button>
+        </form>
+
+      </div><!-- /split-right -->
+
+    </section><!-- /contact-split -->
+
+    <!-- ============================================================
+         INFO STRIP
+    ============================================================ -->
+    <section class="info-strip" aria-label="Why work with us">
+      <div class="info-strip-inner">
+
+        <article class="info-card reveal">
+          <i class="fas fa-shipping-fast card-icon" aria-hidden="true"></i>
+          <h3>Export Ready</h3>
+          <p>Products packaged to international standards for seamless cross-border delivery.</p>
+        </article>
+
+        <article class="info-card reveal reveal-delay-1">
+          <i class="fas fa-certificate card-icon" aria-hidden="true"></i>
+          <h3>Quality Assured</h3>
+          <p>Certified cold-chain from source to delivery, preserving freshness at every step.</p>
+        </article>
+
+        <article class="info-card reveal reveal-delay-2">
+          <i class="fas fa-handshake card-icon" aria-hidden="true"></i>
+          <h3>B2B Focus</h3>
+          <p>Serving importers, distributors, and retailers worldwide with tailored solutions.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="brand-name">The<span>Gentlemen</span> for Export</p>
+        <p>Exporting quality frozen foods from Egypt to the world. Founded 2023.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="export.html">Export</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <!-- TODO: Replace placeholders with real contact information -->
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cairo, Egypt</li>
+          <li><i class="fas fa-phone" aria-hidden="true"></i> +20 [Your Phone Number]</li>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i> [Your Email Address]</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-social-icons">
+          <!-- TODO: Replace # with real social media profile URLs -->
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Connect with us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Follow us on X (Twitter)"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 TheGentlemen for Export. All Rights Reserved.</p>
+      <span class="preview-badge">Design Preview — Not Live</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    // ---- Header scroll state ----
+    const header = document.getElementById('site-header');
+    const SCROLL_THRESHOLD = 20;
+
+    function updateHeader() {
+      header.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
+    }
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader(); // run on load
+
+    // ---- Mobile nav toggle ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    let navOpen = false;
+
+    function toggleNav(open) {
+      navOpen = open;
+      hamburger.classList.toggle('open', navOpen);
+      mobileNav.classList.toggle('open', navOpen);
+      hamburger.setAttribute('aria-expanded', String(navOpen));
+      document.body.style.overflow = navOpen ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', () => toggleNav(!navOpen));
+
+    // Close on overlay click
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) toggleNav(false);
+    });
+
+    // Close on nav link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleNav(false));
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navOpen) toggleNav(false);
+    });
+
+    // ---- IntersectionObserver reveal animations ----
+    const revealEls = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      // Fallback — show all immediately
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // ---- Header is always scrolled when left panel has dark bg visible ----
+    // Force scrolled state on this page since the first panel is dark and the
+    // header needs to be legible from the very top.
+    header.classList.add('scrolled');
+  </script>
+
+</body>
+</html>
