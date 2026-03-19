@@ -214,6 +214,10 @@ requestAnimationFrame(() => requestAnimationFrame(() =>
       if (json.success) {
         btn.textContent = 'Message Sent!';
         contactForm.reset();
+        setTimeout(function () {
+          btn.textContent = 'Submit Inquiry';
+          btn.disabled = false;
+        }, 3000);
       } else {
         throw new Error(json.message);
       }

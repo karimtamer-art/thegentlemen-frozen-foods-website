@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products — TheGentlemen for Export</title>
   <meta name="description" content="Explore TheGentlemen for Export's premium IQF frozen products — French fries, frozen vegetables, and frozen fruits exported from Egypt to global B2B markets." />
-  <link rel="icon" href="data:," />
+  <link rel="icon" type="image/png" sizes="64x64" href="Images/Logo/favicon-64.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/Logo/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/Logo/apple-touch-icon.png" />
   <script>document.documentElement.classList.add('no-trans')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,13 +80,22 @@
         </div>
       </div>
       <div class="hero-right" aria-hidden="true">
-        <img
-          src="Images/mixedVeggiesBag-800.jpg"
-          srcset="Images/mixedVeggiesBag-400.jpg 400w, Images/mixedVeggiesBag-800.jpg 800w"
-          sizes="(max-width: 900px) 100vw, 48vw"
-          alt="Mixed frozen vegetables export bag — TheGentlemen for Export"
-          width="800" height="600"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="Images/fries-package-400.webp 400w, Images/fries-package-800.webp 800w"
+            sizes="(max-width: 900px) 100vw, 48vw"
+          />
+          <img
+            src="Images/fries-package-800.jpg"
+            srcset="Images/fries-package-400.jpg 400w, Images/fries-package-800.jpg 800w"
+            sizes="(max-width: 900px) 100vw, 48vw"
+            alt="TheGentlemen for Export — premium French fries packaging"
+            width="800" height="800"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </div>
     </section>
 
