@@ -11,7 +11,8 @@
   <script>document.documentElement.classList.add('no-trans')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=optional" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="Images/entrepreneur-800.webp" type="image/webp" />
   <link rel="stylesheet" href="css/style.css" />
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -97,6 +98,8 @@
             "
             sizes="50vw"
             alt="TheGentlemen founder overlooking the city at dusk"
+            fetchpriority="high"
+            decoding="async"
           />
         </picture>
         <div class="hero-year">
@@ -132,12 +135,19 @@
     <section class="story">
       <div class="story-inner">
         <div class="story-image-wrap reveal-left">
-          <img
-            class="story-image-main"
-            src="Images/z-image_00010_.png"
-            alt="TheGentlemen frozen food processing facility"
-            loading="lazy"
-          />
+          <picture>
+            <source type="image/webp" srcset="Images/z-image-400.webp 400w, Images/z-image-800.webp 800w" sizes="(max-width: 768px) 100vw, 50vw" />
+            <img
+              class="story-image-main"
+              src="Images/z-image-800.jpg"
+              srcset="Images/z-image-400.jpg 400w, Images/z-image-800.jpg 800w"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt="TheGentlemen frozen food processing facility"
+              width="608" height="400"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <img
             class="story-image-accent"
             src="Images/mixed-veggies-800.jpg"

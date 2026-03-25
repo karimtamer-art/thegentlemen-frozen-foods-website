@@ -7,6 +7,7 @@
   --navy-mid:  #112240;
   --navy-soft: #1a3358;
   --gold:      #C9A84C;
+  --gold-text: #7A6019; /* darkened gold for text on light backgrounds — passes WCAG AA */
   --gold-light:#E8C96A;
   --gold-pale: #f5e9c8;
   --cream:     #F7F3ED;
@@ -101,7 +102,7 @@ body::after {
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -113,12 +114,13 @@ body::after {
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-text);
   flex-shrink: 0;
 }
 
-.section-tag.light { color: rgba(201,168,76,0.85); }
-.section-tag.light::before { background: rgba(201,168,76,0.85); }
+/* .light variant is used on dark/navy backgrounds — keep full gold there */
+.section-tag.light { color: var(--gold); }
+.section-tag.light::before { background: var(--gold); }
 
 .section-title {
   font-family: var(--ff-display);
@@ -2106,7 +2108,7 @@ div.mobile-nav.open .mobile-nav-panel {
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin-bottom: 10px;
 }
 
