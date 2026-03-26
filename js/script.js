@@ -77,9 +77,12 @@ requestAnimationFrame(() => requestAnimationFrame(() =>
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    revealEls.forEach(function (el) {
-      var r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) {
+    // Batch reads before writes to avoid forced reflow
+    var rects = Array.prototype.map.call(revealEls, function (el) {
+      return el.getBoundingClientRect();
+    });
+    revealEls.forEach(function (el, i) {
+      if (rects[i].top < window.innerHeight && rects[i].bottom > 0) {
         el.classList.add('visible');
       } else {
         observer.observe(el);
